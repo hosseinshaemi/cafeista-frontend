@@ -1,0 +1,81 @@
+.rectanglee {
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 500px;
+  background: #ffffff;
+  border-radius: 20px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.verify {
+  display: flex;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.headerText {
+  position: absolute;
+  display: flex;
+  right: 32px;
+  top: 10%;
+  bottom: 75.84%;
+  font-family: "IRANSansXBold";
+  font-size: 24px;
+  line-height: 3px;
+  text-align: right;
+  color: #37251b;
+}
+.createAccount {
+  font-family: "IRANSansXLight";
+  position: absolute;
+  display: flex;
+  right: 32px;
+  top: 55px;
+  color: #aaaaaa;
+  font-size: 12px;
+}
+.Horizantal_Line {
+  border: 1px solid #c1c7d0;
+  right: 5px;
+  left: 5px;
+  position: relative;
+}
+.icons {
+  color: #37251b;
+  width: 25px;
+  height: 25px;
+  margin: -120px 280px 30px 0px;
+}
+.mail {
+  direction: ltr;
+  top: 80%;
+  margin-top: 120px;
+  margin-left: -90px;
+  color: #717171;
+  font-size: 14px;
+}
+.inputs{ 
+  display: flex; 
+  flex-direction: row; 
+  justify-content: center; 
+}
+.radious-square::-webkit-outer-spin-button,
+.radious-square::-webkit-inner-spin-button{
+  display: none;
+}
+.radious-square{ 
+  width: 48px; 
+  height: 61px; 
+  border-radius: 10px; 
+  background-color: rgba(110,95,55,24%); 
+  margin: 0 10px 0 10px; 
+}
