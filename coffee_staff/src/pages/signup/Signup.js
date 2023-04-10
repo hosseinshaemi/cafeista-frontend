@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import backgroundImage from "../../img/background.png";
+import backgroundImage from "../../img/background.jpg";
 import "./Signup.css";
-import signupImg from "../../img/signupphoto.jpg";
+import signupImg from "../../img/back_timg.jpg";
 import { CiUser } from "react-icons/ci";
 import { CiMail } from "react-icons/ci";
 import { CiMobile3 } from "react-icons/ci";
@@ -18,31 +18,33 @@ const styles = {
 
 const Signup = () => {
   const [inputs, setInputs] = useState({
-    username: "",
-    passsword: "",
+    firstname: "",
+    lastname: "",
+    password: "",
     emailaddress: "",
     phonenumber: "",
   });
-  const [email, setemail] = useState("");
+
   const navigate = useNavigate();
 
-  const emailhandeler = (event) => {
-    console.log("Email Handler Function");
-    setemail(event.target.value);
-    console.log("ok");
-  };
-
   const handleChange = (event) => {
-    console.log("HandleChange Function");
     const name = event.target.name;
     const value = event.target.value;
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("handleSubmit");
-    navigate(`/verify/${email}`);
+    console.log(inputs);
+
+    /* const result = await fetch("http://localhost:3000/api/cafe/register", {
+      method: "POST",
+      credentials: "include",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(inputs),
+    }); */
+
+    navigate(`/verify/${inputs.emailaddress}/signup`);
   };
 
   return (
@@ -51,16 +53,26 @@ const Signup = () => {
         <img className="img" src={signupImg}></img>
         <div class="headertext">(: خوش آمدی </div>
         <p className="create_account">ثبت نام و ساخت حساب کاربری</p>
-        <form className="form" style={{marginTop:"40px"}}>
+        <form className="form">
           <div style={{ display: "flex" }}>
             <div className="signup">
               <div className="input">
                 <Inputs
                   type="text"
-                  name="username"
-                  value={inputs.username || ""}
+                  name="firstname"
+                  value={inputs.firstname || ""}
                   onChange={handleChange}
-                  placeholder="نام و نام خانوادگی"
+                  placeholder="نام "
+                />
+                <CiUser className="icon" />
+              </div>
+              <div className="input">
+                <Inputs
+                  type="text"
+                  name="lastname"
+                  value={inputs.lastname || ""}
+                  onChange={handleChange}
+                  placeholder="نام خانوادگی"
                 />
                 <CiUser className="icon" />
               </div>
@@ -69,10 +81,7 @@ const Signup = () => {
                   type="email"
                   name="emailaddress"
                   value={inputs.emailaddress || ""}
-                  onChange={(e) => {
-                    handleChange(e);
-                    emailhandeler(e);
-                  }}
+                  onChange={handleChange}
                   placeholder="ایمیل"
                 />
                 <CiMail className="icon" />
@@ -99,13 +108,16 @@ const Signup = () => {
                 <CiRead className="ciread" />
               </div>
               <div>
-                <div className="Button" style={{ margin: "-30px",marginRight:"-60px" }}>
+                <div
+                  className="Button"
+                  style={{ margin: "-30px", marginRight: "-60px" ,marginTop:"-50px"}}
+                >
                   <button onClick={handleSubmit}>ثبت نام</button>
                 </div>
               </div>
             </div>
-            <div className="ExistAccount">
-              <p className="existaccount">
+            <div className="ExistAccount" >
+              <p className="existaccount" style={{bottom:"-20px"}}>
                 حساب کاربری داری ؟
                 <Link to="/login">
                   <span className="enter">ورود</span>

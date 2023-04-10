@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import VerificationCode from "./CustomInput";
 import Button from "../../components/Button/Button";
 import { FiEdit } from "react-icons/fi";
-import backgroundImg from "../../img/background.png";
+import backgroundImg from "../../img/background.jpg";
 import "./Verificationpage.css";
 import { useNavigate } from "react-router-dom";
 const styles = {
@@ -17,7 +17,7 @@ const Verification = ({ emailAddress }) => {
   const [finished, setFinished] = useState(false);
   const [resendClicked, setResendClicked] = useState(false);
   const [verificationCode, setVerificationCode] = useState(["", "", "", ""]);
-  const { email } = useParams();
+  const { email, kind } = useParams();
   const navigate = useNavigate();
   // const [emailAddress,setemailAddress]=useState({emailAddress});
 
@@ -26,8 +26,18 @@ const Verification = ({ emailAddress }) => {
     console.log("handleSubmit");
     navigate(`/editEmail/${email}`);
   };
+
+  const handelbutton = () => {
+    const code = verificationCode.join('');
+    console.log("handlebutton");
+    if (kind == "signup") {
+      navigate(`/coffeinfo/${email}/${code}`);
+    } else {
+      navigate(`/passrecovery/${email}`);
+    }
+  };
+
   useEffect(() => {
-    console.log(email);
     let intervalId;
     if (timeLeft > 0) {
       intervalId = setInterval(() => {
@@ -62,8 +72,7 @@ const Verification = ({ emailAddress }) => {
           {/* <Link to="/editemail">
             <FiEdit className="icons" onClick={edithandeler}></FiEdit>
           </Link> */}
-          <FiEdit className="icons" onClick={handleSubmit}/>
-    
+          <FiEdit className="icons" onClick={handleSubmit} />
         </div>
         <VerificationCode
           verificationCode={verificationCode}
@@ -80,12 +89,11 @@ const Verification = ({ emailAddress }) => {
             }}
           >
             <Button value="ارسال مجدد" />
-            
           </div>
         ) : (
-          <Link to="/coffeinfo">
-            <Button value="تایید" />
-          </Link>
+          <div className="Button">
+            <button onClick={handelbutton}>تایید</button>
+          </div>
         )}
       </div>
     </div>

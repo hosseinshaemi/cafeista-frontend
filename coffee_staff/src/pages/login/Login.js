@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import backgroundImage from "../../img/background.png";
+import backgroundImage from "../../img/background.jpg";
 import "../signup/Signup.css";
-import signupImg from "../../img/signupphoto.jpg";
+import signupImg from "../../img/back_timg.jpg";
 import { CiUser } from "react-icons/ci";
 import { CiMail } from "react-icons/ci";
 import { CiMobile3 } from "react-icons/ci";
@@ -43,7 +43,7 @@ const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("handleSubmit");
-    navigate(`/verifyemail/${email}`);
+    navigate(`/verify/${email}/login`);
   };
 
   return (
