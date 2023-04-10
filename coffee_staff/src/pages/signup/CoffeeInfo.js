@@ -44,7 +44,7 @@ const CoffeeInfo =()=>{
       
     </div>
   <div style={{marginTop: "30px",}} >
-           <Link to="/login" className="signup_btn" >   
+           <Link to="/home" className="signup_btn" >   
             <Button value="تایید و ثبت اطلاعات"/>
             </Link>
           </div>

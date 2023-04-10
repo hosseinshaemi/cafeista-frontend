@@ -8,7 +8,7 @@ import { CiMobile3 } from "react-icons/ci";
 import { CiLock } from "react-icons/ci";
 import { CiRead } from "react-icons/ci";
 import Button from "../../components/Button/Button";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Inputs from "../../components/User_SignUp/Components/Inputs/Inputs";
 
 const styles = {
@@ -51,7 +51,7 @@ const Signup = () => {
         <img className="img" src={signupImg}></img>
         <div class="headertext">(: خوش آمدی </div>
         <p className="create_account">ثبت نام و ساخت حساب کاربری</p>
-        <form className="form">
+        <form className="form" style={{marginTop:"40px"}}>
           <div style={{ display: "flex" }}>
             <div className="signup">
               <div className="input">
@@ -99,15 +99,17 @@ const Signup = () => {
                 <CiRead className="ciread" />
               </div>
               <div>
-                {/* {{ pathname: "/verify", state: { email: emailAddress } } */}
-                <div className="Button">
+                <div className="Button" style={{ margin: "-30px",marginRight:"-60px" }}>
                   <button onClick={handleSubmit}>ثبت نام</button>
                 </div>
               </div>
             </div>
             <div className="ExistAccount">
               <p className="existaccount">
-                حساب کاربری داری ؟<span className="enter">ورود</span>
+                حساب کاربری داری ؟
+                <Link to="/login">
+                  <span className="enter">ورود</span>
+                </Link>
               </p>
             </div>
           </div>

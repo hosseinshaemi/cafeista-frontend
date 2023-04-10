@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import VerificationCode from "./CustomInput";
+import VerificationCode from "../signup/CustomInput";
 import Button from "../../components/Button/Button";
 import { FiEdit } from "react-icons/fi";
 import backgroundImg from "../../img/background.png";
-import "./Verificationpage.css";
+import "../signup/Verificationpage.css";
 import { useNavigate } from "react-router-dom";
 const styles = {
   display: "flex",
   backgroundImage: `url(${backgroundImg})`,
 };
 
-const Verification = ({ emailAddress }) => {
+const VerifyEmail = ({ emailAddress }) => {
   const [timeLeft, setTimeLeft] = useState(10);
   const [isActive, setIsActive] = useState(false);
   const [finished, setFinished] = useState(false);
@@ -24,7 +24,7 @@ const Verification = ({ emailAddress }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("handleSubmit");
-    navigate(`/editEmail/${email}`);
+    navigate(`/logineditemail/${email}`);
   };
   useEffect(() => {
     console.log(email);
@@ -83,7 +83,7 @@ const Verification = ({ emailAddress }) => {
             
           </div>
         ) : (
-          <Link to="/coffeinfo">
+          <Link to="/passrecovery">
             <Button value="تایید" />
           </Link>
         )}
@@ -91,4 +91,4 @@ const Verification = ({ emailAddress }) => {
     </div>
   );
 };
-export default Verification;
+export default VerifyEmail;

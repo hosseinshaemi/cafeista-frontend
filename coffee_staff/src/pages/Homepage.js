@@ -1,9 +1,9 @@
 import React, {useState,useRef, useEffect} from "react";
-const HomePage =(props)=>{
+const HomePage =()=>{
     return(
-        <React.Fragment>
-
-        </React.Fragment>
+        <div>
+            WELLCOME TO HOME
+        </div>
     )
 }
 export default HomePage;
