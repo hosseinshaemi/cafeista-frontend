@@ -12,7 +12,7 @@ const styles = {
   display: "flex",
   backgroundImage: `url(${backgroundImg})`,
 };
-const EditEmail = () => {
+const LoginEditEmail = () => {
   const { email } = useParams();
   const [newemail, setNewemail] = useState(email);
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ const EditEmail = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(newemail);
-    navigate(`/verify/${newemail}`);
+    navigate(`/verifyemail/${newemail}`);
   };
 
   const handleInput = (event) => {
@@ -52,4 +52,4 @@ const EditEmail = () => {
     </div>
   );
 };
-export default EditEmail;
+export default LoginEditEmail;

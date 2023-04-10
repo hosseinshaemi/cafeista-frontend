@@ -4,6 +4,7 @@ import "../signup/Verificationpage.css";
 import "../../components/Form.css";
 import SignUp from "../../components/User_SignUp/SignUp";
 import { CiMail } from "react-icons/ci";
+import { CiLock } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import { useNavigate, useParams } from "react-router-dom";
@@ -12,7 +13,7 @@ const styles = {
   display: "flex",
   backgroundImage: `url(${backgroundImg})`,
 };
-const EditEmail = () => {
+const PassRecovery = () => {
   const { email } = useParams();
   const [newemail, setNewemail] = useState(email);
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const EditEmail = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(newemail);
-    navigate(`/verify/${newemail}`);
+    navigate(`/login`);
   };
 
   const handleInput = (event) => {
@@ -31,20 +32,25 @@ const EditEmail = () => {
   return (
     <div className="verify" style={styles}>
       <div className="rectanglee">
-        <div className="headerText">ویرایش ایمیل</div>
-        <p className="createAccount">ایمیل خود را ویرایش کنید</p>
+        <div className="headerText">تغییر رمزعبور</div>
+        <p className="createAccount">رمز عبور جدید را وارد کنید</p>
         <div style={{ margin: "180px 30px 5px 0px" }}>
           <Inputs
-            type="email"
-            placeholder={email}
+            type="input"
+            placeholder="رمز عبور جدید"
             value={email}
             onChange={handleInput}
           />
-          <CiMail className="icon" />
+          <CiLock className="icon" />
+          <Inputs
+            type="input"
+            placeholder=" تکرار رمز عبور جدید"
+            value={email}
+            onChange={handleInput}
+          />
+          <CiLock className="icon" />
         </div>
-        {/* <Link to="/verify/">
-          <Button value="تایید" />
-        </Link> */}
+        
         <div className="Button" style={{ margin: "-30px" }}>
           <button onClick={handleSubmit}>تایید</button>
         </div>
@@ -52,4 +58,4 @@ const EditEmail = () => {
     </div>
   );
 };
-export default EditEmail;
+export default PassRecovery;
