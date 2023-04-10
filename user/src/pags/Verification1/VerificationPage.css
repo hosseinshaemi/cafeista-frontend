@@ -1,0 +1,111 @@
+@media(max-width:600px){
+
+  @font-face {
+    font-family: 'IRANSSansXLight';
+    src: url('./../../Fonts/iransansX family/IRANSansX-Light.ttf') format('truetype');
+    font-family: "IRANSansXBold";
+    src: url("./../../Fonts/iransansX family/IRANSansX-Bold.ttf") format("truetype");
+    
+} 
+  .verify {
+    display: flex;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+
+    
+  }
+  
+  .headerText {
+    font-family:'IRANSansXBold';
+      margin-top: 50px;
+      margin-right: 32px;
+      display: flex;
+      justify-content: end;
+      color: #37251B;
+      font-size: 30px;
+  }
+  .createAccount {
+
+    margin-right: 32px;
+    font-family: 'IRANSansXLight';
+    margin-top: 15px;
+    margin-bottom: 40px;
+    /* margin: -17px 25px 50px 40px;  */
+    /* margin-top: 70px; */
+    /* margin-right: 20px;*/
+    display: flex;
+    justify-content: end;
+    color: #AAAAAA;
+    font-size: 12px;
+  }
+  .HorizantalLine {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #c1c7d0;
+    margin-right: 32px;
+    margin-left: 32px;
+    width: 300px;
+    position: relative;
+
+  }
+  .icons {
+    color: #37251b;
+    width: 25px;
+    height: 25px;
+    /* margin: 3px 40px 3px -60px; */
+    margin: -30px 185px 55px -75px;
+  }
+  
+  
+  .email-input{
+    
+    width: 300px;
+    margin: 5px 20px 3px 75px;
+    width: 250px;
+  }
+  .inputs{ 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center;
+    margin: 0 30px auto;
+    
+  }
+  .radious-square::-webkit-outer-spin-button,
+  .radious-square::-webkit-inner-spin-button{
+    display: none;
+  }
+  .radious-square{ 
+    width: 48px; 
+    height: 61px; 
+    border-radius: 10px; 
+    background-color: rgba(110,95,55,24%); 
+    margin: 0 10px 0 10px; 
+  }
+  
+  .mailbox{
+
+    margin: 0 auto;
+  }
+  .sender-btn{
+    display: flex;
+    justify-content: center;
+  }
+}  
+
+@media(max-width:320px){
+  .verify{
+    display: flex;
+    justify-content: center;
+    margin-left: 50px;
+  }
+}
+
+
+
+
