@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import VerificationCode from "../signup/CustomInput";
 import Button from "../../components/Button/Button";
 import { FiEdit } from "react-icons/fi";
-import backgroundImg from "../../img/background.png";
+import backgroundImg from "../../img/background.jpg";
 import "../signup/Verificationpage.css";
 import { useNavigate } from "react-router-dom";
 const styles = {

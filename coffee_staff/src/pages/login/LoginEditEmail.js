@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import backgroundImg from "../../img/background.png";
+import backgroundImg from "../../img/background.jpg";
 import "../signup/Verificationpage.css";
 import "../../components/Form.css";
 import SignUp from "../../components/User_SignUp/SignUp";

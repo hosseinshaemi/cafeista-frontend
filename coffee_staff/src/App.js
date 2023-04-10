@@ -21,14 +21,14 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" exact Component={Signup} />
-          <Route path="/verify/:email" exact Component={Verification} />
+          <Route path="/verify/:email?/:kind?" exact Component={Verification} />
           <Route path="/login" exact Component={Login} />
-          <Route path="/editEmail/:email" exact Component={EditEmail} />
-          <Route path="/coffeinfo" exact Component={CoffeeInfo} />
+          <Route path="/editEmail/:email?" exact Component={EditEmail} />
+          <Route path="/coffeinfo/:email?/:code?" exact Component={CoffeeInfo} />
           <Route path="/home" exact Component={HomePage} />
-          <Route path="/passrecovery" exact Component={PassRecovery} />
-          <Route path="/verifyemail/:email" exact Component={VerifyEmail} />
-          <Route path="/logineditemail/:email" exact Component={LoginEditEmail} />
+          <Route path="/passrecovery/:email?/:code?" exact Component={PassRecovery} />
+          {/* <Route path="/verifyemail/:email?" exact Component={VerifyEmail} /> */}
+          {/* <Route path="/logineditemail/:email?" exact Component={LoginEditEmail} /> */}
         </Routes>
       </div>
    </BrowserRouter>
