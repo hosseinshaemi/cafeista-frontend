@@ -1,0 +1,9 @@
+.main{
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  padding: 90px 0 90px 0;
+  background-color: rgb(252, 252, 252);
+}
+
+

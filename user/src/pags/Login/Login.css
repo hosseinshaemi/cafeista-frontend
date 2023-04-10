@@ -1,0 +1,128 @@
+
+@media(max-width:601px){
+    @font-face {
+        font-family: 'IRANSSansXLight';
+        src: url('./../../Fonts/iransansX family/IRANSansX-Light.ttf') format('truetype');
+        font-family: "IRANSansXBold";
+        src: url("./../../Fonts/iransansX family/IRANSansX-Bold.ttf") format("truetype");
+        
+    }
+    .All1{
+        margin-left: 50px;
+    }
+    .t1{
+       
+        font-family:'IRANSansXBold';
+        margin-top: 50px; 
+        margin-right: 10px;  
+        display: flex;
+        justify-content: end;
+        color: #37251B;
+        font-size: 30px;
+        padding-right: 80px;
+    }
+    .t2{
+        font-family: 'IRANSansXLight';
+        margin-top: -20px; 
+        margin-right: 10px;  
+        display: flex;
+        justify-content: end; 
+        color: #AAAAAA;
+        font-size: 12px;
+        padding-right: 80px;
+    }
+    
+    .login-button{
+       margin-right: 30px;
+       margin-top: -45px;
+    }
+  
+    .icon{
+      color: #37251B;
+      margin: -80px 60px 80px 310px;
+  
+    }
+    .input{
+      margin: 50px 0 50px 0 ;
+      
+    }
+    .ciread{
+      color: #37251B;
+      margin: -55px 320px 55px 45px;
+      
+    }
+   
+    .link1{
+        font-family: 'IRANSansXLight';
+        width: 299px;
+        height: 21px;
+        left: 60px;
+        top: 510px;
+        margin-left: 50px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        text-align: right;
+        
+      
+    }
+    .color{
+        color: #37251B;
+        text-decoration: none;
+    }
+      
+    .link2{
+        font-family: 'IRANSansXLight';
+        position: relative;
+        width: 299px;
+        height: 21px;
+        display: flex;
+        justify-content: end;
+        top: 170px;
+        left: -70px; 
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        text-align: right;
+        color: #37251B;
+        text-decoration: none;
+      
+    }
+      
+    .Account{
+        font-family: 'IRANSansXLight';
+        /* position: absolute; */
+        width: 299px;
+        height: 21px;
+        left: 60px;
+        margin-top: 150px;
+        margin-left: 50px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        text-align: right;
+        color: #37251B;
+        display: flex;
+        justify-content: end;
+    }
+    .a{
+        font-family: 'IRANSansXLight';
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+

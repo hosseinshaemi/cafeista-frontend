@@ -1,0 +1,98 @@
+
+@media(max-width:600px){
+    @font-face {
+        font-family: 'IRANSansXLight';
+        src: url('./../../Fonts/iransansX family/IRANSansX-Light.ttf') format('truetype');
+    }
+    .Horizantal_Line{
+        border:  1px solid #C1C7D0;
+        width: 300px;
+        margin: 8px 5px 2px 44px ;
+    }
+    
+    .Vertical_Line{
+        
+        direction: rtl;
+        border: 1px solid #C1C7D0;
+        height: 25px;
+        position: absolute;
+        margin: -41px 3px 0px 290px;
+    }
+    input{
+        font-family: 'IRANSansXLight';
+        direction: rtl;
+        width: 220px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        margin: -39px 63px 50px  ;
+       border: none;
+    }
+    input:focus{
+        outline: none;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* .Inputs {
+        
+        height: 25px;
+        width: 234px;
+        direction: rtl;
+        border: none;
+    }
+    .Inputs::placeholder{
+        right: 10px;
+    }
+    .Inputs:focus{
+        outline: none;
+    }
+
+    input:first-of-type{
+        top: 10%;
+    }
+    
+    .first_img{
+        border: 1px solid black;
+        
+    }
+
+    .first{
+        top: 25%;
+    }
+    /* .second{
+        top: 35%;
+    } */
+    /* .third{
+        top: 45%;
+    }
+    .fourth{
+        top: 55%;
+    } */ 
+}

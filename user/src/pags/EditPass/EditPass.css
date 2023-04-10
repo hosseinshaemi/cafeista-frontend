@@ -1,0 +1,51 @@
+
+@media(max-width:601px){
+    @font-face {
+        font-family: 'IRANSSansXLight';
+        src: url('./../../Fonts/iransansX family/IRANSansX-Light.ttf') format('truetype');
+        font-family: "IRANSansXBold";
+        src: url("./../../Fonts/iransansX family/IRANSansX-Bold.ttf") format("truetype");
+        
+    }
+    .All4{
+      margin-left: 50px;
+    }
+    .t0001{
+
+        font-family:'IRANSansXBold';
+        margin-top: 50px; 
+        margin-right: 10px;  
+        display: flex;
+        justify-content: end;
+        color: #37251B;
+        font-size: 30px;
+        padding-right: 80px;
+    }
+    .t0002{
+        font-family: 'IRANSansXLight';
+        margin-top: -20px; 
+        margin-right: 10px;  
+        display: flex;
+        justify-content: end; 
+        color: #AAAAAA;
+        font-size: 12px;
+        padding-right: 80px;
+    }
+    
+    .button{
+       margin-right: 80px;
+       margin-top: 10px;
+    }
+  
+    .icon{
+      color: #37251B;
+      margin: 10px 60px 20px 310px;
+  
+    }
+    .input{
+      margin: 50px 0 50px 0 ;
+      
+    }
+  
+ 
+  }
