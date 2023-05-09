@@ -1,0 +1,14 @@
+.leaflet-left {
+    display: flex;
+    left: 0;
+    align-items: flex-start;
+}
+.reset{
+    visibility: hidden;
+}
+.map{
+
+    width: 800px;
+    height: 500px;
+    border-radius: 20px;
+  }

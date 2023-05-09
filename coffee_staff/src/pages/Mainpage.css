@@ -1,0 +1,23 @@
+.main_div {
+    display: flex;
+    flex-direction: row; 
+    height: 100vh;
+    overflow: hidden;
+    right: 0px;
+    /* margin-bottom: 20px; */
+   /* top: 0; */
+    position: fixed;
+  }
+  .tabmenu{
+    flex: 1;
+    overflow-y: auto;
+    /* right: 0px; */
+    /* position: fixed; */
+    width:100vw;
+    height: 90vh;
+    padding: 20px;
+    margin-right: 100px;
+    margin-left: 24px;
+    border-radius: 2px;
+
+  }

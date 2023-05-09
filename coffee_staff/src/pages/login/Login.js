@@ -82,7 +82,7 @@ const Login = () => {
               </div>
               <div>
                 <div className="Button" style={{ marginRight: "-30px" }}>
-                  <Link to="/home"><button >ورود</button></Link>
+                  <Link to="/main"><button >ورود</button></Link>
                   <p onClick={handleSubmit}
                     style={{
                       textAlign: "right",

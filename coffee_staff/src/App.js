@@ -6,10 +6,9 @@ import Login from './pages/login/Login';
 import Verification from './pages/signup/Verificatonpage';
 import EditEmail from './pages/signup/EditEmail';
 import CoffeeInfo from './pages/signup/CoffeeInfo';
-import HomePage from './pages/Homepage';
+import MainPage from './pages/Mainpage';
 import PassRecovery from './pages/login/PassRecovery';
-import VerifyEmail from './pages/login/VerifyEmail';
-import LoginEditEmail from './pages/login/LoginEditEmail';
+import MyMap from './pages/signup/Map';
 function withProps(Component, props) {
   return function(matchProps) {
     return <Component {...props} {...matchProps} />
@@ -25,11 +24,10 @@ function App() {
           <Route path="/login" exact Component={Login} />
           <Route path="/editEmail/:email?" exact Component={EditEmail} />
           <Route path="/coffeinfo/:email?/:code?" exact Component={CoffeeInfo} />
-          <Route path="/home" exact Component={HomePage} />
+          <Route path="/main/*" exact Component={MainPage} />
           <Route path="/passrecovery/:email?/:code?" exact Component={PassRecovery} />
-          {/* <Route path="/verifyemail/:email?" exact Component={VerifyEmail} /> */}
-          {/* <Route path="/logineditemail/:email?" exact Component={LoginEditEmail} /> */}
-        </Routes>
+          <Route path="/location" exact Component={MyMap}/>
+                  </Routes>
       </div>
    </BrowserRouter>
     
