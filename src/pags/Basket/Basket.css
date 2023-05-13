@@ -1,0 +1,181 @@
+@font-face {
+    font-family: 'IRANSansXLight';
+    src: url('./../../Fonts/iransansX family/IRANSansX-Light.ttf') format('truetype');
+    font-family: "IRANSansXBold";
+    src: url("./../../Fonts/iransansX family/IRANSansX-Bold.ttf") format("truetype");
+
+}
+
+
+.header-box {
+
+
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 3%;
+    left: 3%;
+    right: 3%;
+
+}
+
+.header-back-icon {
+    font-size: 30px;
+    position: absolute;
+    left: 5%;
+    padding-top: 30px;
+    color: #37251B;
+}
+
+.header-text {
+    padding-top: 12px;
+    font-size: 20px;
+    font-family: 'IRANSansXLight';
+    position: absolute;
+    left: 30%;
+    right: 30%;
+    color: #37251B;
+}
+
+.header-trash-icon {
+
+    font-size: 30px;
+    position: absolute;
+    color: #37251B;
+    right: 5%;
+    padding-top: 30px;
+}
+
+.basket-items {
+
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 3%;
+    right: 3%;
+    top: 10%;
+
+
+}
+
+.basket-description p {
+
+    margin-right: 35px;
+    font-family: 'IRANSansXBold';
+    color: #37251B;
+    font-size: 25px;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.basket-description textarea {
+    display: block;
+    width: 80%;
+    padding: 10px;
+    border: 2px solid rgba(55, 37, 27, 25%);
+    border-radius: 5px;
+    font-size: 1em;
+    line-height: 2em;
+    resize: vertical;
+    box-sizing: border-box;
+    direction: rtl;
+    font-family: "IRANSansXLight";
+    color: #37251B;
+    position: absolute;
+    left: 10%;
+
+}
+
+.basket-description textarea:focus {
+    border: 2px solid #37251B;
+    outline: none;
+    box-shadow: none;
+
+}
+
+
+.basket-detail .detailtitle {
+    color: #AAAAAA;
+    font-family: 'IRANSansXLight';
+    display: flex;
+    float: right;
+    margin-top: 150px;
+    position: absolute;
+    right: 5%;
+
+}
+
+.basket-detail .detailprice {
+    font-family: 'IRANSansXLight';
+    display: flex;
+    float: left;
+    position: absolute;
+    color: #AAAAAA;
+    left: 23%;
+    margin-top: 150px;
+
+}
+
+.basket-detail .detailtooman {
+    font-family: 'IRANSansXLight';
+    display: flex;
+    float: left;
+    position: absolute;
+    color: #AAAAAA;
+    left: 20%;
+    margin: 150px 20px 10px -30px ;
+
+}
+
+.basket-footer .detailtitle {
+    color: #AAAAAA;
+    font-family: 'IRANSansXLight';
+    display: flex;
+    float: right;
+    margin-top: 150px;
+    position: absolute;
+    right: 5%;
+
+}
+
+.basket-footer .detailprice {
+    font-family: 'IRANSansXLight';
+    display: flex;
+    float: left;
+    position: absolute;
+    color: #AAAAAA;
+    left: 23%;
+    margin-top: 150px;
+
+}
+
+.basket-footer .detailtooman {
+    font-family: 'IRANSansXLight';
+    display: flex;
+    float: left;
+    position: absolute;
+    color: #AAAAAA;
+    left: 20%;
+    margin: 150px 20px 10px -30px ;
+
+}
+.basket-footer button{
+    font-family: "IRANSansXMedium";
+    width: 300px;
+    height: 40px;
+    border-radius: 60px;
+    background-color: #846046;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    border: none;
+    position: relative;
+    margin-top: 320px;
+    margin-bottom: 20px;
+}
+#closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
