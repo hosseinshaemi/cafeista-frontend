@@ -19,7 +19,7 @@
         position: absolute;
         margin: 50px 3px 0px 290px;
     }
-    input{
+   .Inputs input  {
         font-family: 'IRANSansXLight';
         direction: rtl;
         width: 234px;
@@ -27,8 +27,9 @@
         justify-content: center;
         margin: 55px 46px 10px  ;
         border: none;
+        border: none;
     }
-    input:focus{
+   .Inputs input :focus{
         outline: none;
     }
 

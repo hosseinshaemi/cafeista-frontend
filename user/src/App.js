@@ -8,21 +8,14 @@ import { Route , Routes , BrowserRouter } from 'react-router-dom';
 import SignUp from './pags/SignUp/SignUp';
 import VerificationPage from './pags/Verification1/VerificatonPage';
 import VerificationPage2 from './pags/Verification2/VerificatonPage2';
-
+import Search from './pags/SearchPage/Search';
 
 
 
 const App=() => {
   return (
     <div className="main">
-    {/* <Login /> 
-        <ForgotPass />
-        <EditEmail />
-        <EditPass />
-        <VerificationPage/>
-        
-    */}
-
+   
 
     <BrowserRouter>
       <Routes>
@@ -35,6 +28,7 @@ const App=() => {
         <Route path='/Forgetpasscode' Component={VerificationPage} />
         <Route path='/Editpass' Component={EditPass} />
         <Route path='/Editemail' Component={EditEmail}/>
+        <Route path='/search' Component={Search}/>
       </Routes>
     </BrowserRouter>
 
