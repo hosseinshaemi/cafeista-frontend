@@ -1,30 +1,19 @@
-import React from 'react';
-import './App.css';
-import Login from "./pags/Login/Login" 
-import ForgotPass from './pags/ForgotPass/ForgotPass';
-import EditEmail from './pags/Editemail/EditEmail';
-import EditPass from './pags/EditPass/EditPass';
-import { Route , Routes , BrowserRouter } from 'react-router-dom';
-import SignUp from './pags/SignUp/SignUp';
-import VerificationPage from './pags/Verification1/VerificatonPage';
-import VerificationPage2 from './pags/Verification2/VerificatonPage2';
+import React from "react";
+import "./App.css";
+import Login from "./pags/Login/Login";
+import ForgotPass from "./pags/ForgotPass/ForgotPass";
+import EditEmail from "./pags/Editemail/EditEmail";
+import EditPass from "./pags/EditPass/EditPass";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import SignUp from "./pags/SignUp/SignUp";
+import VerificationPage from "./pags/Verification1/VerificatonPage";
+import VerificationPage2 from "./pags/Verification2/VerificatonPage2";
+import Profile from "./pags/profile/profile";
 
-
-
-
-const App=() => {
+const App = () => {
   return (
     <div className="main">
-    {/* <Login /> 
-        <ForgotPass />
-        <EditEmail />
-        <EditPass />
-        <VerificationPage/>
-        
-    */}
-
-
-    <BrowserRouter>
+      {/* <BrowserRouter>
       <Routes>
         <Route path='/' exact Component={Login}/>
         <Route path='/Forgetpass' Component={ForgotPass}/>
@@ -36,14 +25,11 @@ const App=() => {
         <Route path='/Editpass' Component={EditPass} />
         <Route path='/Editemail' Component={EditEmail}/>
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter> */}
 
-    
-
-       
-      
+      <Profile />
     </div>
   );
-}
+};
 
 export default App;

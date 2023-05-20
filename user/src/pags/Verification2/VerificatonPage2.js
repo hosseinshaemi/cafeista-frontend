@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import VerificationCode from "./CustomInput2"
-import Button from '../Components/Button/Button';
+import VerificationCode from "./CustomInput2";
+import Button from "../Components/Button/Button";
 import { FiEdit } from "react-icons/fi";
 import "./VerificationPage2.css";
-import './../../Fonts/iransansX family/IRANSansX-Bold.ttf' ;
-import './../../Fonts/iransansX family/IRANSansX-Light.ttf' ;
+import "./../../Fonts/iransansX family/IRANSansX-Bold.ttf";
+import "./../../Fonts/iransansX family/IRANSansX-Light.ttf";
 
-
-const VerificationPage2 = ({emailAddress}) => {
+const VerificationPage2 = ({ emailAddress }) => {
   const [timeLeft, setTimeLeft] = useState(10);
   const [isActive, setIsActive] = useState(false);
   const [finished, setFinished] = useState(false);
   const [resendClicked, setResendClicked] = useState(false);
-  const [verificationCode, setVerificationCode] = useState(['', '', '', '']);
+  const [verificationCode, setVerificationCode] = useState(["", "", "", ""]);
   // const [emailAddress,setemailAddress]=useState('');
 
   useEffect(() => {
@@ -29,10 +28,7 @@ const VerificationPage2 = ({emailAddress}) => {
     return () => clearInterval(intervalId);
   }, [timeLeft, resendClicked]);
 
-  const edithandeler=()=>
-  {
-
-  }
+  const edithandeler = () => {};
   const handleResendClick = () => {
     setResendClicked(true);
   };
@@ -45,7 +41,7 @@ const VerificationPage2 = ({emailAddress}) => {
   return (
     <div className="verify">
       <div>
-      <div class="headerText">تایید</div>
+        <div class="headerText">تایید</div>
         <p className="createAccount">کد ارسال‌شده به ایمیل خود را وارد کنید</p>
 
         <div className="mailbox">
@@ -56,31 +52,30 @@ const VerificationPage2 = ({emailAddress}) => {
             <FiEdit className="icons" onClick={edithandeler}></FiEdit>
           </Link>
         </div>
-      <VerificationCode verificationCode={verificationCode} setVerificationCode={setVerificationCode} />
-      {finished ? <p>Countdown finished!</p> : <p>{timeLeft} seconds left</p>}
-      {finished ? (
-        <div
-          onClick={() => {
-            setTimeLeft(10);
-            setFinished(false);
-            setIsActive(false);
-            setVerificationCode(['', '', '', '']);
-            // sethandleClear(['', '', '', '']);
-          }}
-        >
-          {/* <Button value="ارسال مجدد" /> */}
-        </div>
-      ) : (
-        <Link to="/main">
-        <Button className='send-btn'  value='ارسال'/>
-        </Link>
-      )}
-        
+        <VerificationCode
+          verificationCode={verificationCode}
+          setVerificationCode={setVerificationCode}
+        />
+        {finished ? <p>Countdown finished!</p> : <p>{timeLeft} seconds left</p>}
+        {finished ? (
+          <div
+            onClick={() => {
+              setTimeLeft(10);
+              setFinished(false);
+              setIsActive(false);
+              setVerificationCode(["", "", "", ""]);
+              // sethandleClear(['', '', '', '']);
+            }}
+          >
+            {/* <Button value="ارسال مجدد" /> */}
+          </div>
+        ) : (
+          <Link to="/main">
+            <Button className="send-btn" value="ارسال" />
+          </Link>
+        )}
       </div>
     </div>
-
   );
 };
 export default VerificationPage2;
-
-
