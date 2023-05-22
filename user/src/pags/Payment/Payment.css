@@ -1,0 +1,23 @@
+.Payment{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* .Payment-header .title{
+
+} */
+.Payment-line{
+    position: absolute;
+    width: 55vw;
+    border: 1px solid #C1C7D0;
+    
+}
+.Payment-wallet{
+    position: absolute;
+    bottom:290px;
+}
+
+.Payment input[type="radio"]:checked {
+    background-color: brown;
+  }
