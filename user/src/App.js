@@ -8,7 +8,8 @@ import { Route , Routes , BrowserRouter } from 'react-router-dom';
 import SignUp from './pags/SignUp/SignUp';
 import VerificationPage from './pags/Verification1/VerificatonPage';
 import VerificationPage2 from './pags/Verification2/VerificatonPage2';
-
+import Basket from './pags/Basket/Basket';
+import HistoryOrder from './pags/History_Order/HistoryOrder'
 
 
 
@@ -35,6 +36,9 @@ const App=() => {
         <Route path='/Forgetpasscode' Component={VerificationPage} />
         <Route path='/Editpass' Component={EditPass} />
         <Route path='/Editemail' Component={EditEmail}/>
+        <Route path='/Basket' Component={Basket}/>
+        <Route path='/HistoryOrder' Component={HistoryOrder}/>
+        
       </Routes>
     </BrowserRouter>
 
