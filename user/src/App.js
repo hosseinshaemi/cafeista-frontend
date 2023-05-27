@@ -48,6 +48,8 @@ const App=() => {
         <Route path='/search' Component={Search}/>
         <Route path='/Basket' Component={Basket}/>
         <Route path='/HistoryOrder' Component={HistoryOrder}/>
+        <Route path='/Profile' Component={Profile}/>
+        
       </Routes>
     </BrowserRouter>
     }
