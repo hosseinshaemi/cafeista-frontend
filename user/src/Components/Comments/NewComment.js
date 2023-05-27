@@ -34,7 +34,7 @@ const NewComment = ({ onSubmit, onCancel }) => {
   return (
     <div>
       <div className="modal-content">
-        <h3>ثبت نظر</h3>
+        <h3 style={{fontFamily:"IRANSansXLight"}}>ثبت نظر</h3>
         <div>
           <div
             style={{
@@ -46,7 +46,7 @@ const NewComment = ({ onSubmit, onCancel }) => {
             }}
           >
             <TextField
-              style={{ width: "150px" }}
+              style={{ width: "150px" , fontFamily:"IRANSansXLight" }}
               id="name"
               label="نام"
               placeholder="نام خود را وارد کنید"
@@ -57,6 +57,7 @@ const NewComment = ({ onSubmit, onCancel }) => {
               sx={{
                 direction: "rtl",
                 "& .MuiInputLabel-root": {
+                  fontFamily:"IRANSansXLight",
                   right: 0,
                   left: "auto",
                 },
@@ -78,6 +79,7 @@ const NewComment = ({ onSubmit, onCancel }) => {
             </Box>
           </div>
           <TextField
+           
             id="commment"
             label="دیدگاه شما"
             placeholder="دیدگاه خود را شرح دهید"
@@ -86,10 +88,14 @@ const NewComment = ({ onSubmit, onCancel }) => {
             variant="standard"
             labelPlacement="end"
             sx={{
+              fontFamily:"IRANSansXLight",
               width: "100%",
               marginTop: "20px",
               direction: "rtl",
-              "& .MuiInputLabel-root": {
+              "&.MuiInputBase-input":{
+                fontFamily:"IRANSansXLight"
+              },
+              "& .MuiInputLabel-root": {fontFamily:"IRANSansXLight",
                 right: 0,
                 left: "auto",
               },
@@ -112,6 +118,7 @@ const NewComment = ({ onSubmit, onCancel }) => {
               borderColor: "#846046",
               flexDirection: "row-reverse",
               justifyContent: "space-evenly",
+              fontFamily:"IRANSansXLight",
             }}
             variant="outlined"
             onClick={handleCancel}
@@ -127,6 +134,7 @@ const NewComment = ({ onSubmit, onCancel }) => {
               backgroundColor: "#846046",
               flexDirection: "row-reverse",
               justifyContent: "space-evenly",
+              fontFamily:"IRANSansXLight",
             }}
             variant="contained"
             onClick={handleSubmit}

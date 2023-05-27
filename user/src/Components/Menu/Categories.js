@@ -119,11 +119,12 @@ const Categories = () => {
                 label={category.categoryName}
                 disableRipple={true}
                 sx={{
+                  fontFamily:"IRANSansXMedium",
                   width: {
                     xs: "8%",
                   },
                   "&.Mui-selected": {
-                    color: "red",
+                    color: "#846046",
                   },
                 }}
               />
