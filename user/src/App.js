@@ -8,16 +8,17 @@ import { Route , Routes , BrowserRouter } from 'react-router-dom';
 import SignUp from './pags/SignUp/SignUp';
 import VerificationPage from './pags/Verification1/VerificatonPage';
 import VerificationPage2 from './pags/Verification2/VerificatonPage2';
+import Search from './pags/SearchPage/Search';
 import CafeObject from './../src/pags/Components/CafeObject/CafeObject'
 import Main from './pags/Main/Main';
 import Navbar from './pags/Navbar/Navbar';
 
 
 
+
 const App=() => {
   return (
-    <div>
-
+    <div className="main">
     <BrowserRouter>
       <Routes>
         <Route path='/' exact Component={Login}/>
@@ -29,16 +30,12 @@ const App=() => {
         <Route path='/Forgetpasscode' Component={VerificationPage} />
         <Route path='/Editpass' Component={EditPass} />
         <Route path='/Editemail' Component={EditEmail}/>
+
         <Route path='/Navbar' Component={Navbar}/>
         
-        
+        <Route path='/search' Component={Search}/>
       </Routes>
     </BrowserRouter>
-
-    
-
-       
-      
     </div>
   );
 }
