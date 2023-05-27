@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import React, { createContext, useState } from "react";
 const AuthProvider = createContext({
   fullname: "",
   setFullname: () => {},
@@ -20,5 +20,5 @@ const AuthProvider = createContext({
   setAccountnumber: () => {},
 });
 
-
 export default AuthProvider;
+
