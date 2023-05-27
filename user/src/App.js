@@ -12,7 +12,8 @@ import Search from './pags/SearchPage/Search';
 import CafeObject from './../src/pags/Components/CafeObject/CafeObject'
 import Main from './pags/Main/Main';
 import Navbar from './pags/Navbar/Navbar';
-
+import Basket from './pags/Basket/Basket';
+import HistoryOrder from './pags/History_Order/HistoryOrder'
 
 
 
@@ -34,6 +35,8 @@ const App=() => {
         <Route path='/Navbar' Component={Navbar}/>
         
         <Route path='/search' Component={Search}/>
+        <Route path='/Basket' Component={Basket}/>
+        <Route path='/HistoryOrder' Component={HistoryOrder}/>
       </Routes>
     </BrowserRouter>
     </div>

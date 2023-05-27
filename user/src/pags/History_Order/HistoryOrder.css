@@ -1,0 +1,47 @@
+.historyorder-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 3%;
+    left: 3%;
+    right: 3%;
+}
+.historyorder-backicon{
+    font-size: 30px;
+    position: absolute;
+    left: 5%;
+    padding-top: 30px;
+    color: #37251B;
+}
+.historyorder-validity{
+    padding-top: 85px;
+    font-size: 20px;
+    font-family: 'IRANSansXLight';
+    position: absolute;
+    left: 30%;
+    right: 30%;
+    color: #37251B;
+}
+.historyorder-header button{
+    font-family: "IRANSansXMedium";
+    width: 112px;
+    height: 38px;
+    border-radius: 13px;
+    background-color: #846046;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    border: none;
+    position: absolute;
+    margin-top: 250px;
+    
+
+}
+.historyorder-text{
+    float: right;
+    font-family: "IRANSansXMedium";
+    margin-top: 150px;
+    margin-left: 160px;
+
+}
