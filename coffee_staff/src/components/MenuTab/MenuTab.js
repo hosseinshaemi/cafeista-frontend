@@ -96,7 +96,7 @@ class Tabs extends Component {
     const { tabs, selected, showModal, deleteTabIndex } = this.state;
     const editedTabTitle = tabs[selected]?.props.title;
     return (
-      <div>
+      <div >
         <ul className="inline">
           {this.state.tabs.map((elem, index) => {
             let style = index === this.state.selected ? "selected" : "";
@@ -106,7 +106,7 @@ class Tabs extends Component {
                 key={index}
                 onClick={() => this.handleChange(index)}
               >
-                <span className="tab-title">{elem.props.title}</span>
+                <span className="tab-title" style={{fontFamily:"IRANSansXBold"}}>{elem.props.title}</span>
                 <span className="tab-icon">
                   {style === "selected" && (
                     <FiEdit3
@@ -173,18 +173,19 @@ class Tabs extends Component {
           open={deleteTabIndex !== null}
           onClose={() => this.setState({ deleteTabIndex: null })}
         >
-          <DialogTitle color={"#ed6c02"}>توجه</DialogTitle>
+          <DialogTitle color={"#ed6c02"} style={{fontFamily:"IRANSansXBold"}}>توجه</DialogTitle>
           <DialogContent>
-            <p>آیا از حذف کردن {editedTabTitle} اطمینان دارید؟</p>
+            <p style={{fontFamily:"IRANSansXLight"}}>آیا از حذف کردن {editedTabTitle} اطمینان دارید؟</p>
           </DialogContent>
           <DialogActions>
             <Button
+              style={{fontFamily:"IRANSansXLight"}}
               color="inherit"
               onClick={() => this.setState({ deleteTabIndex: null })}
             >
               انصراف
             </Button>
-            <Button color="warning" onClick={this.handleConfirmTabDelete}>
+            <Button color="warning" onClick={this.handleConfirmTabDelete} style={{fontFamily:"IRANSansXBold"}}>
               حذف
             </Button>
           </DialogActions>

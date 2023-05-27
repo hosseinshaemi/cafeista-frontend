@@ -2,6 +2,7 @@
 import React from "react";
 import Tab from "../../components/MenuTab/MenuTab";
 import "../../components/MenuTab/MenuTab.css";
+
 const Menu = () => {
   const data = [
     {

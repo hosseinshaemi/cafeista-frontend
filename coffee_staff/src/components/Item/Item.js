@@ -51,12 +51,13 @@ const Item = ({ info }) => {
             flexDirection: "column",
           }}
         >
-          <p style={{right:"12.5%"}}>{name}</p>
+          <p style={{right:"12.5%" , fontFamily:"IRANSansXMedium"}}>{name}</p>
 
-          <p style={{left:"12.5%"}}>{price}<span style={{fontSize:"10px"}}>تومان</span></p>
+          <p style={{left:"12.5%"}}>{price}<span style={{fontSize:"10px" , fontFamily:"IRANSansXLight"}}>تومان</span></p>
         </div>
       </div>
       <button
+        style={{fontFamily:"IRANSansXLight"}}
         className="editbutton"
         onClick={() => {
           handleEditItem(name, price, image);

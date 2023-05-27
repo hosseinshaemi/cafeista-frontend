@@ -88,7 +88,7 @@ const Modal = ({
                   color="#846046"
                   onClick={handleUpload}
                 />
-                <p style={{ color: "#846046", fontSize: "10px" }}>
+                <p style={{ color: "#846046", fontSize: "10px" , fontFamily:"IRANSansXLight"}}>
                   افزودن تصویر
                 </p>
               </div>
@@ -104,9 +104,9 @@ const Modal = ({
               margin: "20px 15px 5px 0",
             }}
           >
-            <p>نام آیتم:</p>
+            <p style={{fontFamily:"IRANSansXBold"}}>نام آیتم:</p>
             <Input
-              style={{ marginRight: "7px" }}
+              style={{ marginRight: "7px" , fontFamily:"IRANSansXLight"}}
               placeholder="نام آیتم را وارد کنید"
               value={tempName}
               onChange={(e) => setTempName(e.target.value)}
@@ -119,9 +119,9 @@ const Modal = ({
               margin: "20px 15px 5px 0",
             }}
           >
-            <p>قیمت: </p>
+            <p style={{fontFamily:"IRANSansXBold"}}>قیمت: </p>
             <Input
-              style={{ marginRight: "16px" }}
+              style={{ marginRight: "16px" , fontFamily:"IRANSansXLight"}}
               placeholder="قیمت را وارد کنید"
               value={tempPrice}
               onChange={(e) => setTempPrice(e.target.value)}
@@ -143,6 +143,7 @@ const Modal = ({
                 margin: "0 12px",
                 borderRadius: "60px",
                 backgroundColor: "#846046",
+                fontFamily:"IRANSansXLight" ,
               }}
               variant="contained"
               onClick={handleSave}
@@ -156,6 +157,7 @@ const Modal = ({
                 borderRadius: "60px",
                 color: "#846046",
                 borderColor: "#846046",
+                fontFamily:"IRANSansXLight",
                
               }}
               variant="outlined"
