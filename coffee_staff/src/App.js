@@ -9,6 +9,7 @@ import CoffeeInfo from './pages/signup/CoffeeInfo';
 import MainPage from './pages/Mainpage';
 import PassRecovery from './pages/login/PassRecovery';
 import MyMap from './pages/signup/Map';
+import Table from './../src/pages/Table/table'
 function withProps(Component, props) {
   return function(matchProps) {
     return <Component {...props} {...matchProps} />
@@ -27,6 +28,8 @@ function App() {
           <Route path="/main/*" exact Component={MainPage} />
           <Route path="/passrecovery/:email?/:code?" exact Component={PassRecovery} />
           <Route path="/location" exact Component={MyMap}/>
+          <Route path="/table" exact Component={Table}/>
+          
                   </Routes>
       </div>
    </BrowserRouter>
