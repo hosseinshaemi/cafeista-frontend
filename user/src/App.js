@@ -9,7 +9,8 @@ import SignUp from './pags/SignUp/SignUp';
 import VerificationPage from './pags/Verification1/VerificatonPage';
 import VerificationPage2 from './pags/Verification2/VerificatonPage2';
 import Search from './pags/SearchPage/Search';
-
+import Home from './pags/Home/Home';
+import CafePage from './pags/CafePage/CafePage';
 
 
 const App=() => {
@@ -29,6 +30,8 @@ const App=() => {
         <Route path='/Editpass' Component={EditPass} />
         <Route path='/Editemail' Component={EditEmail}/>
         <Route path='/search' Component={Search}/>
+        <Route path='/home' Component={Home}/>
+        <Route path='/cafepage' Component={CafePage}/>
       </Routes>
     </BrowserRouter>
 

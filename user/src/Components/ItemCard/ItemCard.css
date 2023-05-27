@@ -1,0 +1,26 @@
+.item-card{
+    height: 40vw;
+    width: 26vw;
+    /* border: 0.8px solid #846046; */
+    margin: 15px 8px 0 0;
+
+    border-radius: 10px;
+    transition: border-color 0.3s, transform 0.3s;
+    box-shadow: 3px 6px 13px 0 #a276579b;
+}
+.item-card.clicked {
+    border: 0.8px solid #846046;
+    transform: translate(5px, -5px);
+  }
+.item-img {
+    width: 22.5vw;
+    height: 22.5vw;
+    margin-top: 2vw;
+    border-radius: 10px;
+}
+.item-info{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-right:2vw ;
+}

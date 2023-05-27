@@ -1,5 +1,5 @@
 
-@media(max-width:601px){
+@media(max-width:600px){
     @font-face {
         font-family: 'IRANSSansXLight';
         src: url('./../../Fonts/iransansX family/IRANSansX-Light.ttf') format('truetype');
