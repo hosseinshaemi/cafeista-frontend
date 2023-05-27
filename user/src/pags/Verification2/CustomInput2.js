@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./CustomInput2.css";
 
 function VerificationCode({ verificationCode, setVerificationCode }) {
-
   const handleInput = (index, e) => {
     const value = e.target.value;
     setVerificationCode((prevState) => {

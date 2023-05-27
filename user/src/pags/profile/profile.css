@@ -1,0 +1,79 @@
+
+    @font-face {
+        font-family: 'IRANSSansXLight';
+        src: url('./../../Fonts/iransansX family/IRANSansX-Light.ttf') format('truetype');
+        font-family: "IRANSansXBold";
+        src: url("./../../Fonts/iransansX family/IRANSansX-Bold.ttf") format("truetype");
+        
+    }
+    .profile{
+        position: absolute;
+        justify-content: center;
+        /* margin-right: 12%; */
+        
+    }
+    .name{
+        font-family:'IRANSansXBold';
+        justify-content: end;
+        display: flex;
+        margin-top: 10px; 
+        margin-left: 120px; 
+        margin-right: 10px;   
+        color: #37251B;
+        font-size: 25px; 
+        
+    }
+    .EditiconsName{
+        color: #37251B;
+        font-size: 20px;
+    }
+    .Editicons{
+        margin-top: 42px;
+        margin-right: 210px;
+        font-size: 28px; 
+    
+    }
+    .in{
+        justify-content: center;
+        margin-top: 20px;
+        color: #37251B;
+    } 
+    .MoreOptions{
+        font-family:'IRANSansXBold';
+        color: #37251B;
+        margin-right: 25px;
+        margin-top:300px;
+    }
+    .txt{
+        text-align: right;
+        margin-right: 15px;
+        font-family:'IRANSansXBold'
+    }
+    .But{
+        font-family: 'IRANSansXMedium';
+        margin-top: 150px;
+        margin-left: 40px;
+        width: 168px;
+        height: 52px;
+        border-radius: 60px;
+        background-color: #846046;
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        border: none;
+    }
+    .But1{
+        font-family: 'IRANSansXMedium';
+        margin-top: 100px;
+        margin-left: 5px;
+        width: 80px;
+        height: 41px;
+        border-radius: 60px;
+        background-color: #846046;
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        border: none;
+
+    }
+   
+    
+    
