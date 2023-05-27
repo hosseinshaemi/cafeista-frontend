@@ -15,7 +15,8 @@ const EditPass=()=> {
     
 
         return (
-
+        
+          <div className='main'>
         <div className='All4'>
           <h1 className="t0001">ویرایش رمز عبور</h1>
           <p className="t0002">.رمز عبور جدید خود را وارد کنید</p>
@@ -41,7 +42,7 @@ const EditPass=()=> {
              </div> 
           
         </div>
-  
+        </div>
       
     );
   }

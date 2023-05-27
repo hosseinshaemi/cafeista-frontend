@@ -1,0 +1,130 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+  }
+  
+  .navbar__logo img {
+    height: 40px;
+  }
+  
+  .navbar__links{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+  }
+  
+  .navbar__links li {
+    margin: 0 10px;
+  }
+  
+  .navbar__links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    z-index: 1;
+    background-color: #333;
+    padding: 10px;
+  }
+  
+  .dropdown__menu a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .dropdown:hover .dropdown__menu {
+    display: block;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar__links {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      margin-top: 10px;
+    }
+    
+    .navbar__links li {
+      margin: 10px 0;
+    }
+    
+    .navbar__links a {
+      font-size: 16px;
+    }
+    
+    .dropdown__menu {
+      position: static;
+      display: none;
+      background-color: transparent;
+     border: none;
+    }
+    
+    .dropdown__menu a {
+      color: #333;
+      margin-bottom: 0;
+    }
+    
+    .navbar__toggle {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 21px;
+      padding: 0;
+      background: transparent;
+      border: none;
+    }
+    
+    .navbar__toggle:focus {
+      outline: none;
+    }
+    
+    .navbar__toggle__icon {
+      width: 100%;
+      height: 3px;
+      background-color: #fff;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    .navbar__toggle__icon.middle {
+      margin: 5px 0;
+    }
+    
+    .navbar__toggle.active .navbar__toggle__icon.top {
+      transform: rotate(45deg);
+      margin-top: 6px;
+    }
+    
+    .navbar__toggle.active .navbar__toggle__icon.middle {
+      opacity: 0;
+    }
+    
+    .navbar__toggle.active .navbar__toggle__icon.bottom {
+      transform: rotate(-45deg);
+      margin-top: -6px;
+    }
+  }
