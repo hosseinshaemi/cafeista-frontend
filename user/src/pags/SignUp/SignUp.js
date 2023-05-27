@@ -46,6 +46,7 @@ const SignUp = () => {
     }
 
     return(
+        <div className="main">
         <div className="signupform">
             <h1 className="welcome"> (: خوش آمدی </h1>
             <p className="creataccount">ثبت نام و ساخت حساب کاربری</p>
@@ -85,6 +86,7 @@ const SignUp = () => {
 
             
             
+        </div>
         </div>
     )
 }

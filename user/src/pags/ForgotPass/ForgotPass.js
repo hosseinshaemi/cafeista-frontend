@@ -11,7 +11,8 @@ import { Link } from 'react-router-dom';
 
 const ForgotPass=(props)=> {
     return (
-      
+
+        <div className='main'>
         <div className='All2'>
             
           <h1 className='t001'> فراموشی رمزعبور</h1>
@@ -34,7 +35,7 @@ const ForgotPass=(props)=> {
           
         </div>
   
-        
+        </div>
       
     );
   }

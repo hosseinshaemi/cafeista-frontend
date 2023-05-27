@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 
 const Login=()=> {
   return (
-    
+      <div className='main'>
       <div className='All1'>
         <h1 className="t1">(: خوش برگشتی</h1>
         <p className="t2">ورود به حساب کاربری</p>
@@ -50,7 +50,7 @@ const Login=()=> {
         
       </div>
 
-      
+      </div>
     
   );
 }

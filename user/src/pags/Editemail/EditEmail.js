@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const EditEmail=()=> {
     return (
-      
+        <div className='main'>
         <div className='All3'>
          
           <h1 className="t01">ویرایش ایمیل</h1>
@@ -28,7 +28,7 @@ const EditEmail=()=> {
            </div> 
      
         </div> 
-      
+        </div>
     );
   }
   
