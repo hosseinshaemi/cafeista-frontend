@@ -24,7 +24,8 @@ import SignUp from "./pags/SignUp/SignUp";
 import VerificationPage from "./pags/Verification1/VerificatonPage";
 import VerificationPage2 from "./pags/Verification2/VerificatonPage2";
 import Profile from "./pags/profile/profile";
-
+import Home from './pags/Home/Home';
+import CafePage from './pags/CafePage/CafePage';
 
 
 const App=() => {
@@ -42,14 +43,13 @@ const App=() => {
         <Route path='/Forgetpasscode' Component={VerificationPage} />
         <Route path='/Editpass' Component={EditPass} />
         <Route path='/Editemail' Component={EditEmail}/>
-
         <Route path='/Navbar' Component={Navbar}/>
-        
         <Route path='/search' Component={Search}/>
         <Route path='/Basket' Component={Basket}/>
         <Route path='/HistoryOrder' Component={HistoryOrder}/>
         <Route path='/Profile' Component={Profile}/>
-        
+        <Route path='/home' Component={Home}/>
+        <Route path='/cafepage' Component={CafePage}/>
       </Routes>
     </BrowserRouter>
     }
