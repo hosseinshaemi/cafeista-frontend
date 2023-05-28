@@ -51,7 +51,8 @@ function Navbar() {
         }
       }
     });
-  }, []);
+  }, 
+  []);
 
   const styleHandeler = (e) => {
     const t = e.target;
@@ -126,5 +127,4 @@ function Navbar() {
     </div>
   );
 }
-
 export default Navbar;

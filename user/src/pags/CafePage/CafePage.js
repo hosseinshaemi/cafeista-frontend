@@ -46,6 +46,7 @@ const CafePage = () => {
     setIsModalOpen(false);
     setIsFabVisible(true);
   };
+ 
   const heartIcon = isLiked ? (
     <AiFillHeart size={30} color="#eb966a" />
   ) : (
@@ -91,7 +92,7 @@ const CafePage = () => {
         }}
         class="slide-card card-shadow"
       >
-        <AliceCarousel autoPlay autoPlayInterval={10000} infinite={true}>
+        <AliceCarousel autoPlay autoPlayInterval={10000} infinite={true} >
           {carouselItems.map((item, index) => (
             <img
               key={index}
