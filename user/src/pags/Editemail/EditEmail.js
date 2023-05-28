@@ -12,34 +12,6 @@ const EditEmail = () => {
       <h1 className="t01">ویرایش ایمیل</h1>
       <p className="t02">.ایمیل خود را ویرایش کنید</p>
 
-<<<<<<< HEAD
-const EditEmail=()=> {
-    return (
-        <div className='main'>
-        <div className='All3'>
-         
-          <h1 className="t01">ویرایش ایمیل</h1>
-          <p className="t02">.ایمیل خود را ویرایش کنید</p>
-           
-          <div className='input'>
-              <Inputs type='email' placeholder='ایمیل' /> 
-              <CiMail className='icon'/>
-          </div>
-         
-          
-            <div className="button">
-              <Link to="/verification" >
-               <Button value= 'تایید' />
-               </Link>
-           </div> 
-     
-        </div> 
-        </div>
-    );
-  }
-  
-  export default EditEmail;
-=======
       <div className="input">
         <Inputs type="email" placeholder="ایمیل" />
         <CiMail className="icon" />
@@ -55,4 +27,3 @@ const EditEmail=()=> {
 };
 
 export default EditEmail;
->>>>>>> UserProfile

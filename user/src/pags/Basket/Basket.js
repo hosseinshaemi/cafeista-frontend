@@ -169,7 +169,10 @@ const Basket = () => {
         </Link>
         
         <h1 className='header-text'>سبد خرید</h1>
-        <IoTrashOutline className='header-trash-icon' onClick={clearBasket} />
+       <div>
+       <IoTrashOutline  className='header-trash-icon' onClick={clearBasket} />
+       </div>
+
       </div>
       <div className='basket-items'>
         {basketItems.map((item) => (

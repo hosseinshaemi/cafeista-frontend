@@ -91,7 +91,6 @@ const SignUp = () => {
         </Link>
       </div>
 
-<<<<<<< HEAD
     return(
         <div className="main">
         <div className="signupform">
@@ -136,8 +135,7 @@ const SignUp = () => {
         </div>
         </div>
     )
-}
-=======
+                
       <p className="enter">
         <Link to="/enterLogin" className="entertext">
           {" "}
@@ -149,6 +147,5 @@ const SignUp = () => {
     </div>
   );
 };
->>>>>>> UserProfile
 
 export default SignUp;

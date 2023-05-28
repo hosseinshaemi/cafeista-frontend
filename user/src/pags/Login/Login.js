@@ -12,32 +12,15 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
-<<<<<<< HEAD
-      <div className='main'>
-      <div className='All1'>
-        <h1 className="t1">(: خوش برگشتی</h1>
-        <p className="t2">ورود به حساب کاربری</p>
-        
-        
-        <div className='input'>
-          <Inputs type='email' placeholder='ایمیل' />
-          <CiMail className='icon'/>
-        </div>
-=======
     <div className="All1">
       <h1 className="t1">(: خوش برگشتی</h1>
       <p className="t2">ورود به حساب کاربری</p>
->>>>>>> UserProfile
 
       <div className="input">
         <Inputs type="email" placeholder="ایمیل" />
         <CiMail className="icon" />
       </div>
 
-<<<<<<< HEAD
-      </div>
-    
-=======
       <div className="input">
         <Inputs type="password" placeholder="رمز عبور" />
         <CiLock className="icon" />
@@ -63,7 +46,7 @@ const Login = () => {
       </p>
       <h3 className="Account">حساب کاربری نداری؟</h3>
     </div>
->>>>>>> UserProfile
+
   );
 };
 

@@ -25,42 +25,6 @@ const EditPass = () => {
         <CiLock className="icon" />
       </div>
 
-<<<<<<< HEAD
-        return (
-        
-          <div className='main'>
-        <div className='All4'>
-          <h1 className="t0001">ویرایش رمز عبور</h1>
-          <p className="t0002">.رمز عبور جدید خود را وارد کنید</p>
-          
-          <div className='input'>
-            <Inputs 
-              type='password'
-              placeholder='رمز عبور' />
-            <CiLock className='icon'/>
-          </div>
-        
-          <div className='input'>
-            <Inputs 
-               type='password' 
-               placeholder='تکرار رمز عبور'  />
-            <CiLock className='icon'/>
-          </div>
-  
-          <div className="button">
-                 <Link to= "/">
-                 <Button value='تایید' />
-                 </Link>
-             </div> 
-          
-        </div>
-        </div>
-      
-    );
-  }
-  export default EditPass;
-  
-=======
       <div className="button">
         <Link to="/">
           <Button value="تایید" />
@@ -70,4 +34,3 @@ const EditPass = () => {
   );
 };
 export default EditPass;
->>>>>>> UserProfile
