@@ -25,7 +25,7 @@ function createData(OrderStatus, TrackingCode, OrderDate, OrderNumber,type,Numbe
     OrderStatus,
     TrackingCode,
     OrderDate,
-    OrderNumber,
+    OrderNumber, 
     // price,
     history: [
       {

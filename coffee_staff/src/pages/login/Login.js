@@ -2,16 +2,11 @@ import React, { useState } from "react";
 import backgroundImage from "../../img/background.jpg";
 import "../signup/Signup.css";
 import signupImg from "../../img/back_timg.jpg";
-import { CiUser } from "react-icons/ci";
 import { CiMail } from "react-icons/ci";
-import { CiMobile3 } from "react-icons/ci";
 import { CiLock } from "react-icons/ci";
 import { CiRead } from "react-icons/ci";
-import Button from "../../components/Button/Button";
 import { useNavigate, Link } from "react-router-dom";
 import Inputs from "../../components/User_SignUp/Components/Inputs/Inputs";
-// import fount from"../../Fonts/iransansX family/IRANSansX_Light.ttf";
-// import "coffee_staff\src\Fonts\iransansX family\IRANSansX-Light.ttf"
 const styles = {
   backgroundImage: `url(${backgroundImage})`,
   display: "flex",
@@ -24,7 +19,6 @@ const Login = () => {
   });
 
   const [email, setemail] = useState("");
-  // const [process, setprocess] = useState("");
   const navigate = useNavigate();
 
   const emailhandeler = (event) => {

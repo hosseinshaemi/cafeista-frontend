@@ -1,5 +1,5 @@
 import React from "react";
-import Counter from "../../../Components/counter/counter";
+import Counter from "../../Components/counter/counter";
 import "./BasketItem.css";
 
 const BasketItem = ({ image, title, price }) => {

@@ -1,5 +1,5 @@
 import React , { useState , useEffect , useRef } from "react";
-import CafeObject from './../Components/CafeObject/CafeObject'
+import CafeObject from "../../Components/CafeObject/CafeObject";
 import './Main.css'
 import { IoIosArrowBack } from "react-icons/io";
 const Main = () => {

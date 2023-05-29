@@ -41,7 +41,6 @@
     .MoreOptions{
         font-family:'IRANSansXBold';
         color: #37251B;
-        margin-right: 25px;
         margin-top:300px;
     }
     .txt{
@@ -52,7 +51,6 @@
     .But{
         font-family: 'IRANSansXMedium';
         margin-top: 150px;
-        margin-left: 40px;
         width: 168px;
         height: 52px;
         border-radius: 60px;

@@ -7,7 +7,6 @@ import { CiMail } from "react-icons/ci";
 import { CiMobile3 } from "react-icons/ci";
 import { CiLock } from "react-icons/ci";
 import { CiRead } from "react-icons/ci";
-import Button from "../../components/Button/Button";
 import { useNavigate, Link } from "react-router-dom";
 import Inputs from "../../components/User_SignUp/Components/Inputs/Inputs";
 

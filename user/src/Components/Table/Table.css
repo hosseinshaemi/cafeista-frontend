@@ -8,6 +8,8 @@
 }
 .input-style{
     height: 25px;
+    margin: 0;
+    /* max-width: 100px; */
     color: #eb966a;
     border: 1px solid #846046;
     background: #fff;

@@ -1,7 +1,9 @@
 .item-card{
-    height: 40vw;
-    width: 26vw;
-    /* border: 0.8px solid #846046; */
+    height: 44vw;
+    width: 28vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 15px 8px 0 0;
 
     border-radius: 10px;
@@ -13,12 +15,13 @@
     transform: translate(5px, -5px);
   }
 .item-img {
-    width: 22.5vw;
-    height: 22.5vw;
+    width: 23.5vw;
+    height: 23.5vw;
     margin-top: 2vw;
     border-radius: 10px;
 }
 .item-info{
+    width: 24vw;
     display: flex;
     flex-direction: row;
     align-items: flex-start;

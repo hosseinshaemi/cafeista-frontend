@@ -13,16 +13,19 @@ const Categories = () => {
           itemName: "لاته",
           itemPrice: "48000",
           itemImage: require("../../img/coffee.jpg"),
+          itemDiscount: "10",
         },
         {
           itemName: "لاته",
           itemPrice: "48000",
           itemImage: require("../../img/coffee.jpg"),
+          itemDiscount: "20",
         },
         {
           itemName: "چای",
           itemPrice: "20000",
           itemImage: require("../../img/coffee.jpg"),
+          itemDiscount: "0",
         },
       ],
     },
@@ -33,11 +36,13 @@ const Categories = () => {
           itemName: "ساندویچ",
           itemPrice: "35000",
           itemImage: require("../../img/coffee.jpg"),
+          itemDiscount: "0",
         },
         {
           itemName: "پیتزا",
           itemPrice: "45000",
           itemImage: require("../../img/coffee.jpg"),
+          itemDiscount: "0",
         },
       ],
     },
@@ -48,16 +53,19 @@ const Categories = () => {
           itemName: "شکلاتی",
           itemPrice: "35000",
           itemImage: require("../../img/coffee.jpg"),
+          itemDiscount: "0",
         },
         {
           itemName: "ساده",
           itemPrice: "45000",
           itemImage: require("../../img/coffee.jpg"),
+          itemDiscount: "0",
         },
         {
           itemName: "لاته",
           itemPrice: "48000",
           itemImage: require("../../img/coffee.jpg"),
+          itemDiscount: "0",
         },
       ],
     },
@@ -68,11 +76,13 @@ const Categories = () => {
           itemName: "شکلات",
           itemPrice: "35000",
           itemImage: require("../../img/coffee.jpg"),
+          itemDiscount: "0",
         },
         {
           itemName: "نسکافه",
           itemPrice: "45000",
           itemImage: require("../../img/coffee.jpg"),
+          itemDiscount: "0",
         },
       ],
     },
@@ -119,11 +129,12 @@ const Categories = () => {
                 label={category.categoryName}
                 disableRipple={true}
                 sx={{
+                  fontFamily:"IRANSansXMedium",
                   width: {
                     xs: "8%",
                   },
                   "&.Mui-selected": {
-                    color: "red",
+                    color: "#846046",
                   },
                 }}
               />

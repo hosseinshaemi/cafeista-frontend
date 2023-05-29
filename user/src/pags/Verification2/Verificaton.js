@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import VerificationCode from "./CustomInput2";
-import Button from "../Components/Button/Button";
+import Button from "../../Components/Button/Button";
 import { FiEdit } from "react-icons/fi";
-import "./VerificationPage2.css";
 import "./../../Fonts/iransansX family/IRANSansX-Bold.ttf";
 import "./../../Fonts/iransansX family/IRANSansX-Light.ttf";
-
-const VerificationPage2 = ({ emailAddress }) => {
+import { useParams,useNavigate } from "react-router-dom";
+import "./VerificationPage2.css"
+const Verification = ({ emailAddress }) => {
   const [timeLeft, setTimeLeft] = useState(10);
   const [isActive, setIsActive] = useState(false);
   const [finished, setFinished] = useState(false);
   const [resendClicked, setResendClicked] = useState(false);
   const [verificationCode, setVerificationCode] = useState(["", "", "", ""]);
-  // const [emailAddress,setemailAddress]=useState('');
-
+  const { email, kind } = useParams();
+  const navigate = useNavigate();
   useEffect(() => {
     let intervalId;
     if (timeLeft > 0) {
@@ -38,6 +37,21 @@ const VerificationPage2 = ({ emailAddress }) => {
     setResendClicked(true);
   }
 
+  const handelbutton = () => {
+    const code = verificationCode.join('');
+    console.log("handlebutton");
+    if (kind == "signup") {
+      navigate(`/homepage`);
+    } else {
+      navigate(`/passrecovery/${email}`);
+    }
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("handleSubmit");
+    navigate(`/editEmail/${email}`);
+  };
+
   return (
     <div className="verify">
       <div>
@@ -45,12 +59,9 @@ const VerificationPage2 = ({ emailAddress }) => {
         <p className="createAccount">کد ارسال‌شده به ایمیل خود را وارد کنید</p>
 
         <div className="mailbox">
-          {/* <p className="mail">{emailAddress}</p> */}
-          <input type="email" className="email-input" />
+        <p className="mail">{email}</p>
           <div className="HorizantalLine"></div>
-          <Link to="/Editemail">
-            <FiEdit className="icons" onClick={edithandeler}></FiEdit>
-          </Link>
+          <FiEdit className="icons" onClick={handleSubmit}/>
         </div>
         <VerificationCode
           verificationCode={verificationCode}
@@ -64,18 +75,17 @@ const VerificationPage2 = ({ emailAddress }) => {
               setFinished(false);
               setIsActive(false);
               setVerificationCode(["", "", "", ""]);
-              // sethandleClear(['', '', '', '']);
             }}
           >
-            {/* <Button value="ارسال مجدد" /> */}
+            <Button value="ارسال مجدد" />
           </div>
         ) : (
-          <Link to="/main">
-            <Button className="send-btn" value="ارسال" />
-          </Link>
+          <div className="Button">
+            <button onClick={handelbutton}>تایید</button>
+          </div>
         )}
       </div>
     </div>
   );
 };
-export default VerificationPage2;
+export default Verification;

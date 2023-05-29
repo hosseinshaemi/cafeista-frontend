@@ -19,7 +19,6 @@ const Verification = ({ emailAddress }) => {
   const [verificationCode, setVerificationCode] = useState(["", "", "", ""]);
   const { email, kind } = useParams();
   const navigate = useNavigate();
-  // const [emailAddress,setemailAddress]=useState({emailAddress});
 
   const handleSubmit = (event) => {
     event.preventDefault();

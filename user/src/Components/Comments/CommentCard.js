@@ -14,7 +14,7 @@ const CommentCard = ({ info }) => {
           alignItems: "baseline",
         }}
       >
-        <p style={{ fontSize: "24px", margin: "5px 0 -10px 0" }}> {name}</p>
+        <p style={{ fontSize: "24px", margin: "5px 0 -10px 0" , fontFamily:"IRANSansXMedium"}}> {name}</p>
         <Rating
           style={{
             direction: "ltr",
@@ -28,7 +28,7 @@ const CommentCard = ({ info }) => {
         />
       </div>
 
-      <p style={{ fontWeight: "normal", textAlign: "right" }}>
+      <p style={{ fontWeight: "normal", textAlign: "right" , fontFamily:"IRANSansXLight" }}>
         {context}
         
       </p>

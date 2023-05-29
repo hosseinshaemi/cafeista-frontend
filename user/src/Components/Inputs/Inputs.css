@@ -1,0 +1,45 @@
+    @font-face {
+        font-family: "IRANSansXLight";
+        src: url("../../Fonts/iransansX family/IRANSansX-Light.ttf")
+          format("truetype");
+    }
+      .Horizantal_Line {
+        direction: rtl;
+        border: 1px solid #c1c7d0;
+        width: 300px;
+        margin: 2px 3px 1px 44px;
+        left: 15%;
+      }
+    
+      .Vertical_Line {
+        direction: rtl;
+        border: 1px solid #c1c7d0;
+        height: 25px;
+        position: absolute;
+        margin: -35px 10px 0px 290px;
+        
+      }
+    
+      input {
+        font-family: "IRANSansXLight";
+        direction: rtl;
+        width: 230px;
+        display: flex;
+        font-size: 13px;
+        margin: -32px 55px 30px;
+        border: none;
+      }
+      input:focus {
+        outline: none;
+      }
+    
+     
+    
+     /* @media(max-width:400px){
+      .Vertical_Line{
+        position: absolute;
+        direction: rtl;
+        border: 1px solid #c1c7d0;
+        height: 25px;
+        
+      } */

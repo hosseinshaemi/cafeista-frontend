@@ -1,10 +1,8 @@
 import React from "react";
 import "./ForgotPass.css";
-import Button from "./../Components/Button/Button";
-import Inputs from "./../Components/Inputs/Inputs";
-
+import Button from "../../Components/Button/Button";
+import Inputs from "../../Components/Inputs/Inputs";
 import { CiMail } from "react-icons/ci";
-
 import "./../../Fonts/iransansX family/IRANSansX-Bold.ttf";
 import "./../../Fonts/iransansX family/IRANSansX-Light.ttf";
 import { Link } from "react-router-dom";

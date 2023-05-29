@@ -2,7 +2,6 @@ import React, { useState ,useEffect} from "react";
 import "./Table.css";
 import DatePicker from "react-multi-date-picker";
 import { Button } from "@mui/material";
-
 import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
 const Table = () => {
@@ -43,19 +42,21 @@ const Table = () => {
   const handleReservation = () => {
     const totalCost = calculateCost();
     console.log("Total Cost:", totalCost);
-    // Perform reservation logic here
   };
 
   return (
-    <div className="table-form">
+   
+     <div className="table-form">
       <div className="input-div">
         <div className="lable-style">
-          <p style={{ marginBottom: "7px" }}>تاریخ </p>
+          <p style={{ marginBottom: "7px" , fontFamily:"IRANSansXLight"}}>تاریخ </p>
           <DatePicker
             calendar={persian}
             locale={persian_fa}
             calendarPosition="bottom-right"
             style={{
+              width:"200px",
+              fontFamily:"IRANSansXLight",
               height: "25px",
               color: "#eb966a",
               border: "1px solid #846046",
@@ -66,7 +67,7 @@ const Table = () => {
           />
         </div>
         <div className="lable-style">
-          <p style={{ marginBottom: "7px" }}>مدت حضور</p>
+          <p style={{ marginBottom: "7px" , fontFamily:"IRANSansXLight" }}>مدت حضور</p>
           <input
             type="number"
             value={duration}
@@ -81,8 +82,9 @@ const Table = () => {
       </div>
       <div className="input-div">
         <div className="lable-style">
-          <p style={{ marginBottom: "7px" }}>زمان ورود</p>
+          <p style={{ marginBottom: "7px" , fontFamily:"IRANSansXLight" }}>زمان ورود</p>
           <input
+          style={{ width:"130px",}}
             value={time1}
             onChange={handleTime1Change}
             className="input-style"
@@ -92,8 +94,9 @@ const Table = () => {
           />
         </div>
         <div className="lable-style">
-          <p style={{ marginBottom: "7px" }}>زمان خروج</p>
+          <p style={{ marginBottom: "7px", fontFamily:"IRANSansXLight" }}>زمان خروج</p>
           <input
+          style={{ width:"130px",}}
             value={calculateTime2()}
             className="input-style"
             type="time"
@@ -104,12 +107,13 @@ const Table = () => {
       </div>
       <div className="input-div">
         <div className="lable-style">
-          <p style={{ marginBottom: "7px" }}>نام میزبان </p>
-          <input className="input-style" type="text" required />
+          <p style={{ marginBottom: "7px" , fontFamily:"IRANSansXLight" }}>نام میزبان </p>
+          <input style={{ width:"200px",}} className="input-style" type="text" required />
         </div>
         <div className="lable-style">
-          <p style={{ marginBottom: "7px" }}>تعداد مهمانان </p>
+          <p style={{ marginBottom: "7px" , fontFamily:"IRANSansXLight" }}>تعداد مهمانان </p>
           <input
+          
             type="number"
             value={numberOfGuests}
             onChange={handleNumberOfGuestsChange}
@@ -123,10 +127,11 @@ const Table = () => {
       </div>
       <div className="input-div">
         <div className="lable-style">
-          <p style={{ marginBottom: "7px" }}> تلفن همراه </p>
+          <p style={{ marginBottom: "7px" , fontFamily:"IRANSansXLight" }}> تلفن همراه </p>
           <input
             style={{
               direction: "ltr",
+              width:"200px",
             }}
             className="input-style"
             type="tel"
@@ -135,8 +140,8 @@ const Table = () => {
           />
         </div>
         <div className="lable-style" style={{alignItems:"center", justifyContent:"flex-start", fontSize:"19px"}}>
-          <p style={{ marginBottom: "7px", marginLeft:"20px" }}>هزینه نهایی:</p>
-          <p style={{margin:"0", color: "#eb966a"}}>{totalCost} <samp style={{fontSize:"12px"}}>تومان</samp></p>
+          <p style={{ marginBottom: "7px", marginLeft:"20px" , fontFamily:"IRANSansXLight" }}>هزینه نهایی:</p>
+          <p style={{margin:"0", color: "#eb966a" , fontFamily:"IRANSansXLight"}}>{totalCost} <samp style={{fontSize:"12px" , fontFamily:"IRANSansXLight"}}>تومان</samp></p>
         </div>
       </div>
       <div className="input-div">
@@ -145,10 +150,11 @@ const Table = () => {
             width: "100%",
           }}
         >
-          <p style={{ marginBottom: "7px", marginTop:"0" }}> توضیحات </p>
+          <p style={{ marginBottom: "7px", marginTop:"0" , fontFamily:"IRANSansXLight" }}> توضیحات </p>
           <textarea
             placeholder="توضیحات رزرو خود را اینجا بنویسید."
             style={{
+              fontFamily:"IRANSansXLight",
               position: "relative",
               width: "100%",
               height: "120px",
@@ -175,6 +181,7 @@ const Table = () => {
             backgroundColor: "#846046",
             flexDirection: "row-reverse",
             justifyContent: "space-evenly",
+            fontFamily:"IRANSansXLight",
           }}
           variant="contained"
         >
@@ -183,6 +190,7 @@ const Table = () => {
        
       </div>
     </div>
+
   );
 };
 

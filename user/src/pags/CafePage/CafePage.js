@@ -46,6 +46,7 @@ const CafePage = () => {
     setIsModalOpen(false);
     setIsFabVisible(true);
   };
+ 
   const heartIcon = isLiked ? (
     <AiFillHeart size={30} color="#eb966a" />
   ) : (
@@ -91,7 +92,7 @@ const CafePage = () => {
         }}
         class="slide-card card-shadow"
       >
-        <AliceCarousel autoPlay autoPlayInterval={10000} infinite={true}>
+        <AliceCarousel autoPlay autoPlayInterval={10000} infinite={true} >
           {carouselItems.map((item, index) => (
             <img
               key={index}
@@ -109,10 +110,10 @@ const CafePage = () => {
 
       <div className="cafeheader">
         <div className="cafename">
-          <p style={{ fontSize: "27px", color: "#fff", marginTop: "-12px" }}>
+          <p style={{ fontSize: "27px", color: "#fff", marginTop: "-12px" , fontFamily:"IRANSansXMedium" }}>
             لوتوس
           </p>
-          <p style={{ fontSize: "12px", color: "#fff", marginTop: "-30px" }}>
+          <p style={{ fontSize: "12px", color: "#fff", marginTop: "-30px" , fontFamily:"IRANSansXLight"}}>
             حکیم نظامی
           </p>
         </div>
@@ -144,7 +145,7 @@ const CafePage = () => {
               checked={activeTab === "menu"}
               onChange={() => handleTabClick("menu")}
             />
-            <label className="tab" htmlFor="radio-1">
+            <label className="tab" htmlFor="radio-1" style={{fontFamily:"IRANSansXLight"}}>
               منو
             </label>
             <input
@@ -154,7 +155,7 @@ const CafePage = () => {
               checked={activeTab === "tables"}
               onChange={() => handleTabClick("tables")}
             />
-            <label className="tab" htmlFor="radio-2">
+            <label className="tab" htmlFor="radio-2" style={{fontFamily:"IRANSansXLight"}}>
               میزها
             </label>
             <input
@@ -164,7 +165,7 @@ const CafePage = () => {
               checked={activeTab === "reviews"}
               onChange={() => handleTabClick("reviews")}
             />
-            <label className="tab" htmlFor="radio-3">
+            <label className="tab" htmlFor="radio-3" style={{fontFamily:"IRANSansXLight"}}>
               نظر کاربران
             </label>
             <span className="glider"></span>

@@ -2,11 +2,7 @@ import React, { useState } from "react";
 import backgroundImg from "../../img/background.jpg";
 import "../signup/Verificationpage.css";
 import "../../components/Form.css";
-import SignUp from "../../components/User_SignUp/SignUp";
-import { CiMail } from "react-icons/ci";
 import { CiLock } from "react-icons/ci";
-import { Link } from "react-router-dom";
-import Button from "../../components/Button/Button";
 import { useNavigate, useParams } from "react-router-dom";
 import Inputs from "../../components/User_SignUp/Components/Inputs/Inputs";
 const styles = {

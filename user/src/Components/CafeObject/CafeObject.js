@@ -1,6 +1,4 @@
 import React from "react";
-// {image , title , street}
-import CafeImage from '../../images/cafelotus.jpg'
 import {GiRoundStar} from 'react-icons/gi';
 import './CafeObject.css'
 const CafeObject = ({image , name , location , score }) => {
