@@ -4,11 +4,12 @@ import "../Button/Button.css";
 import Modal from "../ItemModal/ItemModal";
 
 const Item = ({ info }) => {
-  const { itemName, itemPrice, itemImage } = info;
+  const { itemName, itemPrice, itemImage,itemDiscount } = info;
   const [showModal, setShowModal] = useState(false);
   const [name, setName] = useState(itemName);
   const [price, setPrice] = useState(itemPrice);
   const [image, setImage] = useState(itemImage);
+  const [discount,setDiscount]=useState(itemDiscount);
 
   const handleOpenModal = () => {
     setShowModal(true);
@@ -18,12 +19,16 @@ const Item = ({ info }) => {
     setShowModal(false);
   };
 
-  const handleEditItem = (newName, newPrice, newImage) => {
+  const handleEditItem = (newName, newPrice, newImage, newDiscount) => {
     setName(newName);
     setPrice(newPrice);
     setImage(newImage);
+    setDiscount(newDiscount);
   };
-
+  const calculateDiscountedPrice = () => {
+    return itemPrice - (itemPrice * itemDiscount) / 100;
+  };
+  const hasDiscount = itemDiscount > 0;
   return (
     <div className="item">
       <img
@@ -53,14 +58,28 @@ const Item = ({ info }) => {
         >
           <p style={{right:"12.5%" , fontFamily:"IRANSansXMedium"}}>{name}</p>
 
-          <p style={{left:"12.5%"}}>{price}<span style={{fontSize:"10px" , fontFamily:"IRANSansXLight"}}>تومان</span></p>
+          <p style={{ left: "12.5%", marginTop: "-5px" }}>
+            {hasDiscount ? (
+              <span className="new-price">
+                <del style={{ fontSize: "12px", fontFamily:"IRANSansXLight" }}>{itemPrice}</del>{" "}
+                <span style={{ color: "rgb(235, 150, 106)", fontSize: "16px",fontFamily:"IRANSansXLight" }}>
+                  {calculateDiscountedPrice()}
+                </span>{" "}
+                <span style={{ fontSize: "10px",fontFamily:"IRANSansXLight" }}>تومان</span>
+              </span>
+            ) : (
+              <>
+                {itemPrice} <span style={{ fontSize: "10px",fontFamily:"IRANSansXLight" }}>تومان</span>
+              </>
+            )}
+          </p>
         </div>
       </div>
       <button
         style={{fontFamily:"IRANSansXLight"}}
         className="editbutton"
         onClick={() => {
-          handleEditItem(name, price, image);
+          handleEditItem(name, price, image, discount);
           handleOpenModal();
         }}
       >
@@ -73,6 +92,7 @@ const Item = ({ info }) => {
         itemName={name}
         itemPrice={price}
         itemImage={image}
+        itemDiscount={discount}
       />
     </div>
   );

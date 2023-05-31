@@ -13,7 +13,7 @@ function Navbar() {
   useEffect(() => {
     const tabsVerticalInner = document.getElementById("accordian");
     const selectorVerticalInner =
-      tabsVerticalInner.querySelectorAll("li").length;
+    tabsVerticalInner.querySelectorAll("li").length;
     const activeItemVerticalInner = tabsVerticalInner.querySelector(".active");
     const activeWidthVerticalHeight = activeItemVerticalInner.clientHeight;
     const activeWidthVerticalWidth = activeItemVerticalInner.clientWidth;

@@ -10,16 +10,18 @@ const Modal = ({
   itemName,
   itemPrice,
   itemImage,
+  itemDiscount,
 }) => {
   const [selectedFile, setSelectedFile] = useState(itemImage);
   const [name, setName] = useState(itemName);
   const [price, setPrice] = useState(itemPrice);
   const [image, setImage] = useState(itemImage);
+  const [discount, setDiscount]=useState(itemDiscount);
 
   const [tempName, setTempName] = useState(itemName);
   const [tempPrice, setTempPrice] = useState(itemPrice);
   const [tempImage, setTempImage] = useState(itemImage);
-
+  const [temDiscount, setTempDiscount]=useState(itemDiscount);
   
     const handleFileChange = (event) => {
       const file = event.target.files[0];
@@ -46,7 +48,8 @@ const Modal = ({
     setName(tempName);
     setPrice(tempPrice);
     setImage(tempImage);
-    handleEditItem(tempName, tempPrice, tempImage); 
+    setDiscount(temDiscount);
+    handleEditItem(tempName, tempPrice, tempImage, temDiscount); 
     closeModal();
   };
   
@@ -54,6 +57,7 @@ const Modal = ({
     setTempName(name);
     setTempPrice(price);
     setTempImage(image);
+    setDiscount(discount);
     closeModal();
   };
 
@@ -125,6 +129,21 @@ const Modal = ({
               placeholder="قیمت را وارد کنید"
               value={tempPrice}
               onChange={(e) => setTempPrice(e.target.value)}
+            />
+          </div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              margin: "20px 15px 5px 0",
+            }}
+          >
+            <p style={{fontFamily:"IRANSansXBold"}}>تخفیف: </p>
+            <Input
+              style={{ marginRight: "10px" , fontFamily:"IRANSansXLight"}}
+              placeholder="درصد تخفیف   "
+              value={temDiscount}
+              onChange={(e) => setTempDiscount(e.target.value)}
             />
           </div>
         </div>

@@ -125,7 +125,7 @@ class Tabs extends Component {
         </ul>
         <div
           style={{
-            backgroundColor: "#E4DDDD",
+            backgroundColor:" rgb(240, 229, 212)",
             height: "85vh",
             marginTop: "3.5vh",
             borderRadius: "8px",
