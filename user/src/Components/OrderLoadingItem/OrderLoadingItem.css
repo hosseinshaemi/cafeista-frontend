@@ -1,0 +1,75 @@
+.card-rectangle {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    width: 100px;
+    height: 60px;
+    background-color: rgba(240, 229, 222, 50%);
+    border-radius: 3px;
+    margin-bottom: 30px;
+
+  }
+  
+  .card-rectangle .title {
+    font-family: "IRANSansXBold";
+    color: #37251b;
+    font-size: 15px;
+    margin-left: 220px;
+    padding-top: 10px;
+  }
+  
+  .card-rectangle button{
+    font-family: "IRANSansXMedium";
+    width: 80px;
+    height: 25px;
+    border-radius: 10px;
+    background-color: #846046;
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    border: none;
+    position: relative;
+    bottom: 100px;
+    margin-left: 220px;
+  }
+  
+  .card-rectangle p {
+    font-family: "IRANSansXLight";
+    color: #37251b;
+    font-size: 15px;
+    margin: 0;
+  }
+  
+  .card-rectangle .date {
+    margin-top: 10px;
+    margin-left: 220px;
+  }
+  .card-rectangle .datevalue {
+    margin-top: -20px;
+    margin-left: 90px;
+  }
+
+  .card-rectangle .code {
+    
+    margin-left: 190px;
+  }
+  .card-rectangle .codevalue {
+    
+    margin-left: 20px;
+    margin-top: -20px;
+  }
+  
+  .card-rectangle .price {
+    margin-left: 220px;
+
+  }
+  .card-rectangle .pricevalue {
+    margin-left: 80px;
+    margin-top: -20px;
+    
+  }
+  
+  .card-rectangle .tooman {
+    margin-top: -23px;
+    margin-right: 20px;
+  }
