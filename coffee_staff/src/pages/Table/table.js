@@ -8,8 +8,6 @@ import { MdOutlineTableBar } from "react-icons/md";
 import "react-multi-date-picker/styles/colors/red.css";
 import "react-multi-date-picker/styles/backgrounds/bg-brown.css"
 import TextField from '@mui/material/TextField';
-import "./../../Fonts/iransansX family/IRANSansX-Bold.ttf";
-import "./../../Fonts/iransansX family/IRANSansX-Light.ttf";
 import TimeButton from "../../components/TimeButton/TimeButton";
 import ModalTable from "../../components/ModalTable/ModalTable";
 import openImg from "../../img/open.png";
@@ -23,7 +21,7 @@ const Table = () => {
     const [icons, setIcons] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
     const [modalContent, setModalContent] = useState({});
-    const [Index, setIndex] = useState(0);
+    const [selectedIconIndex, setSelectedIconIndex] = useState(null);
     const [isOpenDay, setIsOpenDay] = useState(true);
 
     const toggleImage = () => {
@@ -31,15 +29,10 @@ const Table = () => {
     };
 
     function IconWithCounter({ icon, index, handleIconClick }) {
-
-        useEffect(() => {
-            setIndex(index + 1);
-        });
         return (
             <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", alignItems: "center", flexBasis: "20%" }}>
-                <div onClick={handleIconClick} style={{ cursor: "pointer" }}>{icon}</div>
+                <div onClick={() => handleIconClick(index)} style={{ cursor: "pointer" }}>{icon}</div>
                 <div style={{ marginTop: "75px", marginLeft: "-55px", fontSize: "15px", color: "#999" }}>{index + 1}</div>
-
             </div>
         );
     }
@@ -63,11 +56,12 @@ const Table = () => {
         setIcons([...icons, <MdOutlineTableBar key={Date.now()} style={{ marginLeft: '35px', marginRight: '30px', marginTop: '30px', fontSize: '40px' }} />]);
     };
 
-    const handleIconClick = (content) => {
-        setModalContent(content);
+    const handleIconClick = (index) => {
+        setModalContent({ title: "Modal Title", description: "Modal Description" });
+        setSelectedIconIndex(index);
         setIsOpen(true);
-
     };
+
     const handleCloseModal = () => {
         setIsOpen(false);
     };
@@ -79,22 +73,23 @@ const Table = () => {
                     <img style={{ height: "80px", position: "absolute", left: "70px", top: "20px", marginRight: "40px" }} src={isOpenDay ? openImg : closeImg} onClick={toggleImage} alt={isOpenDay ? "Close" : "Open"} />
                     <div style={{ direction: "rtl" }}>
                         <DatePicker
-                            style={{ marginTop: "30px", backgroundColor: "#F8F1E7" }}
+                            style={{ marginTop: "30px", backgroundColor: "#F8F1E7", width: "16vw" }}
                             className="red"
                             calendar={persian}
                             locale={persian_fa}
                             calendarPosition="bottom-right"
                         />
-                    </div> 
+                    </div>
                     <div>
-                    <TextField id="EndWork" type="number" label="پایان ساعت کاری" variant="filled" size="small" style={{ top: 15 , width: 120,  }} onChange={(e) => setEndWork(e.target.value)} />
-                    <TextField id="StartWork" type="number" label="شروع ساعت کاری" variant="filled" size="small" style={{ top: 15, width: 120,  }} onChange={(e) => setStartWork(e.target.value)} />
-                    
+                        <p style={{ position: 'absolute', fontSize: 12, fontFamily: "IRANSansXLight", right: "49.5%" }}>:پایان ساعت کاری</p>
+                        <p style={{ position: 'absolute', fontSize: 12, fontFamily: "IRANSansXLight", left: '54%' }}>:شروع ساعت کاری</p>
+                        <TextField id="EndWork" type="number" variant="filled" size="small" style={{ top: 17, width: 120, marginRight: '1%' }} onChange={(e) => setEndWork(e.target.value)} />
+                        <TextField id="StartWork" type="number" variant="filled" size="small" style={{ top: 17, width: 120, }} onChange={(e) => setStartWork(e.target.value)} />
                     </div>
 
                     <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", marginLeft: "10%", marginRight: "10%" }}>
                         {icons.map((icon, index) => (
-                            <IconWithCounter icon={icon} index={index} key={index} handleIconClick={() => handleIconClick({ title: "Modal Title", description: "Modal Description" })} />
+                            <IconWithCounter icon={icon} index={index} key={index} handleIconClick={handleIconClick} />
                         ))}
 
                         <BsPlusCircleDotted
@@ -104,12 +99,11 @@ const Table = () => {
                     </div>
                 </div>
             </div>
-            <ModalTable isOpen={isOpen} handleCloseModal={handleCloseModal} modalContent={modalContent} popups={popups} index={Index} />
-
+            <ModalTable isOpen={isOpen} handleCloseModal={handleCloseModal} modalContent={modalContent} popups={popups} index={selectedIconIndex + 1} />
         </div>
     )
-
 }
+
 export default Table;
 
 
