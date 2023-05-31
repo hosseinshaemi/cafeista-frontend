@@ -47,22 +47,7 @@ const OrderConfirmationModal = ({ isOpen, handleCloseModal }) => {
 
     ])
 
-    {/* <Typography id="modal-modal-title" variant="h6" component="h2" > */ }
-    //             <div style={{}}>
-    //             <div>
-    //             {userbasketlist.map((item) => (
-    //                 <BasketObj image={item.image} title={item.title} count={item.count} />
-    //             ))}
-    //             </div>
-    //             {/* <p style={{color:'#AAAA' , fontFamily:'IRANSansXLight'  , fontSize:'15px'}}>توضیحات</p>
-    //             <p style={{color:'black' , fontFamily:'IRANSansXLight',  fontSize:'15px' }}> این یک متن آماده است این یک متن آماده است این یک متن آماده است این یک متن آماده است این یک متن آماده است این یک متن آماده است این یک متن آماده است این یک متن آماده است این یک متن آماده است</p> */}
-    //        </div>
-    //         {/* </Typography> */}
-
-    //         {/* <Typography id="modal-modal-description" sx={{ mt: 2}}>
-    //             <button style={{ position: 'fixed', width: 130, height: 45, borderRadius: 8, bottom: '5%', left: '18%', fontFamily: "IRANSansXLight", fontSize: 15 }}>لغو</button>
-    //             <button style={{ position: 'fixed' , width: 130, height: 45, borderRadius: 8, bottom: '5%', left: '55%', fontFamily: "IRANSansXLight", fontSize: 15 }}>تایید</button>
-    //         </Typography> */}
+  
     const body = (
         <Box
             sx={{

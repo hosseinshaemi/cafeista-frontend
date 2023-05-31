@@ -111,6 +111,7 @@ const Profile = () => {
             style={{
               position: "absolute",
               justifyContent: "center",
+              fontFamily:"IRANSansXLight" ,
               width: 300,
               right: 30,
               top: 20,
@@ -141,6 +142,7 @@ const Profile = () => {
               size='medium'
               style={{
                 position: "absolute",
+                fontFamily:"IRANSansXLight" ,
                 justifyContent: "center",
                 width: 300,
                 right: 30,
@@ -171,6 +173,7 @@ const Profile = () => {
               style={{
                 position: "absolute",
                 justifyContent: "center",
+                fontFamily:"IRANSansXLight",
                 width: 300,
                 right: 30,
                 top: 185,

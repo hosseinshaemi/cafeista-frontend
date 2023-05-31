@@ -26,7 +26,6 @@ function createData(OrderStatus, TrackingCode, OrderDate, OrderNumber,type,Numbe
     TrackingCode,
     OrderDate,
     OrderNumber, 
-    // price,
     history: [
       {
         type,
@@ -154,41 +153,35 @@ const HistoryOrder =()=>{
             sx={{
               position:"relative",
               marginLeft:"100px",
-              // display:"flex",
-              // justifyContent:"center",
-              // position:"absolute",
-              // left:"16%",
               top:"15%",
-              // width: "60%",
               overflow: "hidden",
-              backgroundColor: "#FFF8F3",
+              backgroundColor: "white" ,
               borderRadius: "10px",
               
             }}
           >
-           {/* <TableContainer sx={{ maxHeight: 480, minHeight: 480 , marginTop: "15%" , borderRadius: "10px" , position: "relative"}}>*/}
             <TableContainer sx={{ maxHeight: 480, minHeight: 480 }}> 
               <Table aria-label="collapsible table" sx={{ borderRadius: "10px" }}>
                 <TableHead>
                   <TableRow>
-                    <TableCell sx={{ backgroundColor: "#EEC89A" }} />
+                    <TableCell sx={{ backgroundColor: "#F0E5D4" }} />
                     <TableCell
-                      style={{ textAlign: "center", backgroundColor: "#EEC89A" , fontFamily:"IRANSansXBold" }}
+                      style={{ textAlign: "center", backgroundColor: "#F0E5D4" , fontFamily:"IRANSansXBold" }}
                     >
                       وضعیت سفارش
                     </TableCell>
                     <TableCell
-                      style={{ textAlign: "center", backgroundColor: "#EEC89A" , fontFamily:"IRANSansXBold"}}
+                      style={{ textAlign: "center", backgroundColor: "#F0E5D4" , fontFamily:"IRANSansXBold"}}
                     >
                       کدرهگیری
                     </TableCell>
                     <TableCell
-                      style={{ textAlign: "center", backgroundColor: "#EEC89A" , fontFamily:"IRANSansXBold"}}
+                      style={{ textAlign: "center", backgroundColor: "#F0E5D4" , fontFamily:"IRANSansXBold"}}
                     >
                       تاریخ سفارش
                     </TableCell>
                     <TableCell
-                      style={{ textAlign: "center", backgroundColor: "#EEC89A", fontFamily:'IRANSansXBold' }}
+                      style={{ textAlign: "center", backgroundColor: "#F0E5D4", fontFamily:'IRANSansXBold' }}
                     >
                       شماره سفارش
                     </TableCell>

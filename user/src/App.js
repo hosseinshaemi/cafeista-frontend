@@ -13,6 +13,7 @@ import HistoryOrder from './pags/History_Order/HistoryOrder'
 import Login from "./pags/Login/Login";
 import Profile from "./pags/profile/profile";
 import CafePage from './pags/CafePage/CafePage';
+import Home from './pags/Home/Home';
 
 const App=() => {
   return (
@@ -32,6 +33,7 @@ const App=() => {
         <Route path='/HistoryOrder' Component={HistoryOrder}/>
         <Route path='/Profile' Component={Profile}/>
         <Route path='/cafepage' Component={CafePage}/>
+        <Route path='/Home' Component={Home}/>
       </Routes>
     </BrowserRouter>
     }

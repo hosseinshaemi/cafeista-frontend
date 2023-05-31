@@ -4,15 +4,6 @@ import Payment from "../Payment/Payment";
 import Backdrop from "../../Components/Backdrop/Backdrop";
 import SubmitComment from "../SubmitComment/SubmitComment";
 const HistoryOrderCard = ({ title , date , tracking_code , price }) => {
-    // const [showBackdrop, setShowBackdrop] = useState(false);
-
-    // const handleButtonClick = () => {
-    //   setShowBackdrop(true);
-    // };
-  
-    // const handleToggleBackdrop = () => {
-    //   setShowBackdrop(false);
-    // };
     
     const [showBackdrop, setShowBackdrop] = useState(false);
     const toggleBackdrop = () => {
