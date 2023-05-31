@@ -3,6 +3,19 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import Item from "../ItemCard/ItemCard";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+const theme = createTheme({
+  components: {
+    MuiTabs: {
+      styleOverrides: {
+        indicator: {
+          backgroundColor: "#846046",
+        },
+      },
+    },
+  },
+});
 
 const Categories = () => {
   const data = [
@@ -97,57 +110,60 @@ const Categories = () => {
   const activeCategory = data[value];
 
   return (
-    <div>
-      <div 
-        style={{
-          marginTop: "20px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Box
-          sx={{
-            width: {
-              xs: "80%",
-              sm: 300,
-              md: 480,
-            },
-            bgcolor: "background.paper",
+    <ThemeProvider theme={theme}>
+      <div>
+        <div
+          style={{
+            marginTop: "20px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            variant="scrollable"
-            scrollButtons={false}
-            aria-label="scrollable prevent tabs example"
+          <Box
+            sx={{
+              width: {
+                xs: "80%",
+                sm: 300,
+                md: 480,
+              },
+              bgcolor: "background.paper",
+            }}
           >
-            {data.map((category, index) => (
-              <Tab
-                key={index}
-                label={category.categoryName}
-                disableRipple={true}
-                sx={{
-                  fontFamily:"IRANSansXMedium",
-                  width: {
-                    xs: "8%",
-                  },
-                  "&.Mui-selected": {
-                    color: "#846046",
-                  },
-                }}
-              />
-            ))}
-          </Tabs>
-        </Box>
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              variant="scrollable"
+              scrollButtons={false}
+              aria-label="scrollable prevent tabs example"
+            >
+              {data.map((category, index) => (
+                <Tab
+                  key={index}
+                  label={category.categoryName}
+                  disableRipple={true}
+                  sx={{
+                    fontFamily: "IRANSansXMedium",
+                    width: {
+                      xs: "8%",
+                    },
+                    "&.Mui-selected": {
+                      color: "#846046",
+                    },
+                   
+                  }}
+                />
+              ))}
+            </Tabs>
+          </Box>
+        </div>
+        <div className="menu-container">
+          {activeCategory.items.map((item, index) => (
+            <Item key={index} item={item} />
+          ))}
+        </div>
       </div>
-      <div className="menu-container">
-        {activeCategory.items.map((item, index) => (
-          <Item key={index} item={item} />
-        ))}
-      </div>
-    </div>
+    </ThemeProvider>
   );
 };
 
