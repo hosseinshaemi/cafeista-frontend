@@ -9,7 +9,7 @@
 } */
 .Payment-line{
     position: absolute;
-    width: 55vw;
+    width: 42vw;
     border: 1px solid #C1C7D0;
     
 }
@@ -19,5 +19,10 @@
 }
 
 .Payment input[type="radio"]:checked {
-    background-color: brown;
+    background-color: #AAAA;
   }
+
+  .css-ahj2mt-MuiTypography-root {
+    margin: 0;
+    font-family: "IRANSansXLight", sans-serif !important;
+}

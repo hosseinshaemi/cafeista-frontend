@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import ForgotPass from './pags/ForgotPass/ForgotPass';
 import EditEmail from './pags/Editemail/EditEmail';
 import EditPass from './pags/EditPass/EditPass';
 import { Route , Routes , BrowserRouter } from 'react-router-dom';
@@ -22,7 +21,6 @@ const App=() => {
        <BrowserRouter>
       <Routes>
         <Route path='/' exact Component={Login}/>
-        <Route path='/Forgetpass' Component={ForgotPass}/>
         <Route path='/signup' Component={SignUp} />
         <Route path='/homepage' Component={Main}/>
         <Route path='/verify/:email?/:kind?' Component={VerificationPage2} />
@@ -32,8 +30,7 @@ const App=() => {
         <Route path='/Basket' Component={Basket}/>
         <Route path='/HistoryOrder' Component={HistoryOrder}/>
         <Route path='/Profile' Component={Profile}/>
-        <Route path='/cafepage' Component={CafePage}/>
-        <Route path='/Home' Component={Home}/>
+        <Route path='/cafepage/:key?' Component={CafePage}/>
       </Routes>
     </BrowserRouter>
     }

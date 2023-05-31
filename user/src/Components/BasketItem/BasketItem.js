@@ -4,7 +4,7 @@ import "./BasketItem.css";
 
 const BasketItem = ({ image, title, price }) => {
   return (
-    <div style={{marginBottom:"30px" , marginTop:'40px'}}>
+    <div style={{marginBottom:"30px" , marginTop:'40px'}} >
       <div className="basket-item">
         <img src={image} />
         <p className="basket-item-title">{title}</p>

@@ -1,8 +1,5 @@
 import React  , {useState} from "react";
-import './HistoryOrderCard.css'
-import Payment from "../Payment/Payment";
-import Backdrop from "../../Components/Backdrop/Backdrop";
-import SubmitComment from "../SubmitComment/SubmitComment";
+import "../Payment/Payment"
 const HistoryOrderCard = ({ title , date , tracking_code , price }) => {
     
     const [showBackdrop, setShowBackdrop] = useState(false);
@@ -11,23 +8,20 @@ const HistoryOrderCard = ({ title , date , tracking_code , price }) => {
     };
     return(
         <div>
-            <div className="card-rectangle" >
-                     <p className="title">{title}</p>
-                     <p className="date"> : تاریخ</p>
-                     <p className="datevalue">{date}</p>
-                     <p className="code"> : کد رهگیری </p>
-                     <p className="codevalue">{tracking_code}</p>
-                     <p className="price"> : قیمت</p>
-                     <p className="pricevalue">{price}</p>
-                     <p className="tooman">تومان</p>
-                     <button onClick={toggleBackdrop} value="ثبت نظر" style={{marginTop:'97px', right:'68%'}}>ثبت نظر</button>
-                     <Backdrop showBackdrop={showBackdrop} onToggleBackdrop={toggleBackdrop}>
-                        <SubmitComment/>
-                    </Backdrop>
-                    
+             <div style={{width:'60vw' , height:'16vh' , backgroundColor:'rgba(239,224,200,50%)'  , borderRadius:'6px' , marginBottom:'20px'}}>
+                <div style={{display:'flex' , flexDirection:'column', justifyContent:'flex-end' , alignItems:'flex-end', padding: '8px'}}>
+                <p style={{fontFamily:'IRANSansXBold' , fontSize:'10px', margin: 0}}>{title}</p>
+                <p style={{fontFamily:'IRANSansXLight' , fontSize:'10px', margin: 0}}>کد رهگیری: {tracking_code}</p>
+                <p style={{fontFamily:'IRANSansXLight' , fontSize:'10px', margin: 0}}>تاریخ : {date}</p>
+                <p style={{fontFamily:'IRANSansXLight' , fontSize:'10px', margin: 0}}>قیمت : {price} تومان</p>
+                </div>
+                <div style={{display:'flex' , justifyContent:'center' , alignItems:'center'}}>
+                <button style={{width:'50px' , height:'20px' , fontSize:'10px' , borderRadius:'7px'}}  value="ثبت نظر">ثبت نظر</button>
+                
             </div>
-
         </div>
+        </div>
+
     )
 }
 export default HistoryOrderCard ; 

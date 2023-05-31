@@ -6,6 +6,7 @@ import "./../../Fonts/iransansX family/IRANSansX-Bold.ttf";
 import "./../../Fonts/iransansX family/IRANSansX-Light.ttf";
 import { useParams,useNavigate } from "react-router-dom";
 import "./VerificationPage2.css"
+import { IoArrowBack } from "react-icons/io5";
 const Verification = ({ emailAddress }) => {
   const [timeLeft, setTimeLeft] = useState(10);
   const [isActive, setIsActive] = useState(false);
@@ -24,6 +25,7 @@ const Verification = ({ emailAddress }) => {
     } else {
       setFinished(true);
     }
+
     return () => clearInterval(intervalId);
   }, [timeLeft, resendClicked]);
 
@@ -52,8 +54,12 @@ const Verification = ({ emailAddress }) => {
     navigate(`/editEmail/${email}`);
   };
 
+  const handleclick =() => {
+    window.history.back() ; 
+  }
   return (
     <div className="verify">
+       <IoArrowBack style={{position:'fixed' , top:'3%' , left:'7%' , color:'#37251B'}} size={20} onClick={handleclick}/>
       <div>
         <div class="headerText">تایید</div>
         <p className="createAccount">کد ارسال‌شده به ایمیل خود را وارد کنید</p>

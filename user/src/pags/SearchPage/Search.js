@@ -1,7 +1,8 @@
 import React, { useState, useRef } from "react";
 import "./Search.css";
 import CoffeeResult from "../../Components/CoffeeResult/CoffeeResult";
-import { BiArrowBack, BiTrendingUp } from "react-icons/bi";
+import { BiTrendingUp } from "react-icons/bi";
+import { IoArrowBack } from "react-icons/io5";
 import Img from "../../img/coffee.jpg"
 const Search = () => {
   const [active, setActive] = useState(false);
@@ -26,12 +27,14 @@ const Search = () => {
       inputRef.current.focus();
     }
   }
-
+  const handleclick = () => {
+    window.history.back()
+  }
   return (
     <div className="search-container">
       <div className="searchpage">
         <div className="searchbar">
-          <BiArrowBack size={30} color="#37251B" onClick={handleClick} />
+        <IoArrowBack style={{position:'fixed' , top:'3%' , left:'7%' , color:'#37251B'}} size={20} onClick={handleclick}/>
           <div>
             <input
               type="text"

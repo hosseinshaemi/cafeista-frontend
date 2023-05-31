@@ -5,6 +5,7 @@
     left: 3%;
     right: 3%;
     margin-top: 5px;
+    justify-content: space-between;
     /* margin-bottom: 20px; */
 }
 
@@ -69,7 +70,6 @@
 .basket-item-counter{
     position: absolute;
     right: 100%;
-    left: -20%;
     margin-top: 18px;
 }
 

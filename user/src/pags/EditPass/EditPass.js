@@ -5,7 +5,7 @@ import Inputs from "../../Components/Inputs/Inputs";
 import { CiLock } from "react-icons/ci";
 import "./../../Fonts/iransansX family/IRANSansX-Bold.ttf";
 import "./../../Fonts/iransansX family/IRANSansX-Light.ttf";
-
+import { IoArrowBack } from "react-icons/io5";
 const EditPass = () => {
   const { email, code } = useParams();
   const [newemail, setNewemail] = useState(email);
@@ -21,10 +21,14 @@ const EditPass = () => {
     console.log("HandleInput");
     setNewemail(event.target.value);
   };
+  const handleclick = () => {
+    window.history.back()
+  }
   return (
     <div
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
+       <IoArrowBack style={{position:'fixed' , top:'3%' , left:'7%' , color:'#37251B'}} size={20} onClick={handleclick}/>
       <div style={{ width: "80%" }}>
         <h1 className="t1">تغییر رمزعبور</h1>
         <p className="t2">رمز عبور جدید را وارد کنید</p>
@@ -41,7 +45,7 @@ const EditPass = () => {
           <div style={{ marginRight: "20px" }}>
             <CiLock
               size={25}
-              style={{ margin: "0", position: "relative", left: "310px" }}
+              style={{ margin: "0", position: "relative", left: "310px"  , color:'#37251B'}}
             />
             <Inputs
               type="password"
@@ -54,7 +58,7 @@ const EditPass = () => {
             <div>
               <CiLock
                 size={25}
-                style={{ margin: "0", position: "relative", left: "310px" }}
+                style={{ margin: "0", position: "relative", left: "310px" , color:'#37251B' }}
               />
               <Inputs
                 type="password"

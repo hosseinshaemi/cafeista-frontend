@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useHistory, useState } from "react";
 import Modal from "react-modal";
 import image from "../../img/coffee.jpg";
 import image1 from "../../img/cafe.jpg";
@@ -12,14 +12,17 @@ import Table from "../../Components/Table/Table";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import Menu from "../../Components/Menu/Menu";
-
+import { IoArrowBack } from "react-icons/io5";
+import { useParams } from "react-router-dom";
 const CafePage = () => {
+  const { key } = useParams();
   const [isLiked, setIsLiked] = useState(false);
   const [activeTab, setActiveTab] = useState("menu");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isFabVisible, setIsFabVisible] = useState(true);
   const [comments, setComments] = useState([]);
   const carouselItems = [image1, image];
+  console.log(key);
   const handleLikeClick = () => {
     setIsLiked(!isLiked);
   };
@@ -79,9 +82,33 @@ const CafePage = () => {
     default:
       tabContent = null;
   }
-
+  
+  const handleclick =()=> {
+    window.history.back()
+    }
+  
   return (
     <div>
+      <div style={{
+      position: 'fixed',
+      top: '3%',
+      left: '7%',
+      transform: 'translate(-50%, -50%)',
+      width: '25px',
+      height: '25px',
+      borderRadius: '50%',
+      background: 'rgba(255, 255, 255, 30%)',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      zIndex: '95'
+      }}>
+      <IoArrowBack style={{
+        color: '#37251B',
+        zIndex: '100'
+  }} size={20} onClick={handleclick} />
+</div>
+
       <div
         style={{
           position: "fixed",
@@ -92,6 +119,7 @@ const CafePage = () => {
         }}
         class="slide-card card-shadow"
       >
+        
         <AliceCarousel autoPlay autoPlayInterval={10000} infinite={true} >
           {carouselItems.map((item, index) => (
             <img

@@ -43,7 +43,7 @@ const Login = () => {
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
       <div style={{ width: "80%" }}>
-        <h1 className="t1">(: خوش برگشتی</h1>
+        <h1 className="t1" style={{color:'#37251B'}}>(: خوش برگشتی</h1>
         <p className="t2">ورود به حساب کاربری</p>
       </div>
       <form style={{ top: "170px", display: "flex", flexDirection: "column" }}>
@@ -58,7 +58,7 @@ const Login = () => {
           <div style={{ marginRight: "20px" }}>
             <CiMail
               size={25}
-              style={{ margin: "0", position: "relative", left: "310px" }}
+              style={{ margin: "0", position: "relative", left: "310px"  , color:'#37251B'}}
             />
             <Inputs
               type="email"
@@ -75,7 +75,7 @@ const Login = () => {
             <div>
               <CiLock
                 size={25}
-                style={{ margin: "0", position: "relative", left: "310px" }}
+                style={{ margin: "0", position: "relative", left: "310px"  , color:'#37251B'}}
               />
                <CiRead className="ciread" onClick={togglePasswordVisibility}/>
               <Inputs
@@ -105,6 +105,8 @@ const Login = () => {
                   textAlign: "right",
                   fontSize: "12px",
                   marginRight: "0",
+                  fontFamily:'IRANSansXLight' , 
+                  color:'#AAAA'
                 }}
               >
                 رمز عبورت رو فراموش کردی؟
@@ -118,10 +120,10 @@ const Login = () => {
                   top: "700px",
                 }}
               >
-                <p style={{ margin: 0, direction: "rtl", width: "100%" }}>
+                <p style={{ margin: 0, direction: "rtl", width: "100%" , fontFamily:'IRANSansXLight'}}>
                   حساب کاربری نداری ؟
-                  <Link to="/signup">
-                    <span>ثبت نام</span>
+                  <Link to="/signup" style={{color:'#AAAA' , textDecoration:'none'}}>
+                    <span style={{fontFamily:''}}>ثبت نام</span>
                   </Link>
                 </p>
               </div>

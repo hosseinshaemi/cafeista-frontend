@@ -8,7 +8,7 @@ import Input from '@mui/material/Input';
 import DisCountModal from "../../Components/DisCountModal/DisCountModal";
 import "./../../Fonts/iransansX family/IRANSansX-Bold.ttf";
 import "./../../Fonts/iransansX family/IRANSansX-Light.ttf";
-
+import { IoArrowBack } from "react-icons/io5";
 const style = {
   position: "absolute",
   textAlign: "center",
@@ -84,9 +84,12 @@ const Profile = () => {
     event.preventDefault();
     console.log("handleFavoriteCafes");
   };
-
+  const handleclick = () => {
+    window.history.back()
+  }
   return (
     <div className="main">
+      <IoArrowBack style={{position:'fixed' , top:'3%' , left:'7%' , color:'#37251B'}} size={20} onClick={handleclick}/>
       <div className="profile">
         <div>
           <p

@@ -1,6 +1,5 @@
 import React , {useState} from "react";
 import { IoArrowBack } from "react-icons/io5";
-import "./HistoryOrder.css";
 import HistoryOrderCard from "../HistoryOrderCard/HistoryOrderCard";
 const HistoryOrder = () => {
   const [HistoryOrderItems, setHistoryOrderItems] = useState([
@@ -20,19 +19,25 @@ const HistoryOrder = () => {
     },
     
   ]);
-
+  const handleclick = () => {
+    window.history.back()
+  }
   return (
     <div>
-      <div className="historyorder-header">
-        <IoArrowBack className="historyorder-backicon" />
-        <p className="historyorder-validity">اعتبار فعلی</p>
-        <p className="historyorder-validity" style={{ marginTop: "80px", marginLeft: "30px", fontSize: "15px" }}>200.000</p>
-        <p className="historyorder-validity" style={{ marginTop: "80px", marginRight: "70px",fontSize: "15px",color: "rgba(170,170,170)"}}>تومان</p>
-        <button>افزایش اعتبار</button>
+      <div>
+        <IoArrowBack style={{position:'fixed' , top:'3%' , left:'7%' , color:'#37251B'}} size={20} onClick={handleclick}/>
+        <div style={{display:'flex' , flexDirection:'column' , justifyContent:'center' , alignItems:'center', marginTop:'32px'}}>
+          <p style={{fontFamily:'IRANSansXLight'}}>اعتبار فعلی</p>
+          <div style={{display:'flex' , flexDirection:'row'}}>
+            <p style={{ fontSize: "15px",color: "rgba(170,170,170)" , direction:'rtl' , fontFamily:'IRANSansXLight'}}>تومان</p>
+          <p style={{ fontSize: "15px" }}>200.000</p>
+          </div>
+          <button style={{width:'112px' , height:'38px' , fontSize:'15px' , borderRadius:'7px'}}>افزایش اعتبار</button>
+        </div>
       </div>
-      <div className="historyorder-body">
-        <p className="historyorder-text">سفارش های پیشین</p>
-        <div className="historyorders" style={{position:'absolute' , top:'40%' , display:'flex' , flexDirection:'column' , justifyContent:'center' , alignItems:'center' , right:"25%" , left:'25%'}}>
+      <div >
+        <p style={{fontFamily:'IRANSansXBold' , position:'fixed' , right:'7%' , color:'#37251B'}}>سفارش های پیشین</p>
+        <div className="historyorders" style={{position:'absolute' , top:'35%' , display:'flex' , flexDirection:'column' , justifyContent:'center' , alignItems:'center' , right:"25%" , left:'25%'}}>
         {HistoryOrderItems.map((item) => (
           <HistoryOrderCard key={item.id} title={item.title} date={item.date} tracking_code={item.tracking_code} price={item.price} />
         ))}

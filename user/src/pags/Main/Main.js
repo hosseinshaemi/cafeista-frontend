@@ -2,10 +2,11 @@ import React , { useState , useEffect , useRef } from "react";
 import CafeObject from "../../Components/CafeObject/CafeObject";
 import './Main.css'
 import { IoIosArrowBack } from "react-icons/io";
+import { IoArrowBack } from "react-icons/io5";
 const Main = () => {
-  const [cafelist, setcafelist] = useState([
+  const cafelist=[
     {
-      id: 1,
+      id: '1',
       image:
         "https://img.freepik.com/free-photo/cup-coffee-with-heart-drawn-foam_1286-70.jpg?size=626&ext=jpg&ga=GA1.2.2124743745.1678829291&semt=robertav1_2_sidr",
       name: "1لوتوس",
@@ -13,7 +14,7 @@ const Main = () => {
       score: 4.9,
     },
     {
-      id: 2,
+      id: '2',
       image:
         "https://img.freepik.com/free-photo/cup-coffee-with-heart-drawn-foam_1286-70.jpg?size=626&ext=jpg&ga=GA1.2.2124743745.1678829291&semt=robertav1_2_sidr",
       name: "2لوتوس",
@@ -60,10 +61,10 @@ const Main = () => {
       location: "حکیم نظامی",
       score: 4.9,
     }
-  ]);
+  ]
 
   // ############################################################################################################################
-  const [favoritecafelist, setfavoritecafelist] = useState([ 
+  const favoritecafelist=[ 
     {
       id: 1,
       image:'https://img.freepik.com/free-photo/cup-coffee-with-drawn-heart_1286-225.jpg?size=626&ext=jpg&ga=GA1.2.2124743745.1678829291&semt=sph'
@@ -112,7 +113,7 @@ const Main = () => {
       location: "حکیم نظامی",
       score: 4.9,
     }
-  ]);
+  ];
   const [displayCountbestcafe, setDisplayCountbestcafe] = useState(5);
   const [displayCountfavcafe, setDisplayCountfavcafe] = useState(5);
 
@@ -125,7 +126,9 @@ const Main = () => {
   const handleShowMorefavcafe= () => {
     setDisplayCountfavcafe((prevCount2) => prevCount2 + 1);
   };
-
+  const handleclick = () => {
+    window.history.back()
+  }
   useEffect(() => {
     if (containerRefbestcafe.current) {
       containerRefbestcafe.current.scrollLeft = containerRefbestcafe.current.scrollWidth;
@@ -139,8 +142,9 @@ const Main = () => {
   }, [favoritecafelist]);
   return (
     <div style={{ marginTop:'10px' , marginBottom:'60px' , height:`calc(100%-70px)`}}>
+      <IoArrowBack style={{position:'fixed' , top:'3%' , left:'7%' , color:'#37251B'}} size={20} onClick={handleclick}/>
     <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
-      <p style={{ fontFamily: "IRANSansXBold", textAlign: "right", marginRight: "30px", marginTop: "30px", fontSize: '20px' , marginBottom:'0'}}>
+      <p style={{ fontFamily: "IRANSansXBold", textAlign: "right", marginRight: "30px", marginTop: "30px", fontSize: '20px' , marginBottom:'0' , color:'#37251B'}}>
         برترین ها
       </p>
       
@@ -160,13 +164,16 @@ const Main = () => {
         }}
       >
         {cafelist.slice(0, displayCountbestcafe).reverse().map((item) => (
+          console.log("name"+item.id),
           <CafeObject
-            key={item.id}
+          // key={index}
+          // item={item}
+            id={item.id}
             image={item.image}
             name={item.name}
             location={item.location}
             score={item.score}
-            style={{ flexShrink: 0 }}
+            
           />
         ))}
 
@@ -176,7 +183,7 @@ const Main = () => {
     </div>
     {displayCountbestcafe < cafelist.length && (
         <div  style={{position:'absolute' , top:'5%' , left:'5%' , display:'flex' , flexDirection:'row'}} onClick={handleShowMorebestcafe}>
-          <IoIosArrowBack  style={{ fontFamily: "IRANSansXBold", fontSize: '10px', color: '#AAAA' , marginTop:'13px'}}/>
+          {/* <IoIosArrowBack  style={{ fontFamily: "IRANSansXBold", fontSize: '10px', color: '#AAAA' , marginTop:'13px'}}/> */}
           <p style={{ fontFamily: "IRANSansXBold", textAlign: "left", marginLeft: "3px", fontSize: '10px', color: '#AAAA' }}>
           موارد بیشتر
           </p>
@@ -189,7 +196,6 @@ const Main = () => {
     {displayCountfavcafe < favoritecafelist.length && (
         // style={{textAlign:'right', marginRight:'320px' , marginTop:'-300px', fontSize:'20px' , marginBottom:'0' , display:'flex' , flexDirection:'row'}}
         <div style={{display:'flex', flexDirection:'row' , position:'absolute' , left:'5%' , marginTop:'10px'}}  onClick={handleShowMorefavcafe}>
-          <IoIosArrowBack  style={{ fontFamily: "IRANSansXBold", textAlign: "left", fontSize: '10px', color: '#AAAA'  , marginTop:'12px'}}/>
           <p  style={{ fontFamily: "IRANSansXBold", textAlign: "left", marginLeft:'3px', fontSize: '10px', color: '#AAAA'}}>
           موارد بیشتر
           </p>
@@ -197,7 +203,7 @@ const Main = () => {
         
         )}
       <div style={{ display: "flex", flexDirection:'row', alignItems: "flex-end" , position:'absolute' , right:'5%' }}>
-        <p style={{fontFamily:'IRANSansXBold', fontSize:'20px'}}>
+        <p style={{fontFamily:'IRANSansXBold', fontSize:'20px' , color:'#37251B'}}>
         علاقه مندی ها
         </p>
         
@@ -219,7 +225,7 @@ const Main = () => {
         >
           {favoritecafelist.slice(0, displayCountfavcafe).reverse().map((item) => (
             <CafeObject
-              key={item.id}
+              id={item.id}
               image={item.image}
               name={item.name}
               location={item.location}
