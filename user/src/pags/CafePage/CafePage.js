@@ -1,4 +1,4 @@
-import React, {useHistory, useState } from "react";
+import React, {useHistory, useState , useEffect} from "react";
 import Modal from "react-modal";
 import image from "../../img/coffee.jpg";
 import image1 from "../../img/cafe.jpg";
@@ -15,7 +15,7 @@ import Menu from "../../Components/Menu/Menu";
 import { IoArrowBack } from "react-icons/io5";
 import { useParams } from "react-router-dom";
 const CafePage = () => {
-  const { key } = useParams();
+  const { key, kind } = useParams();
   const [isLiked, setIsLiked] = useState(false);
   const [activeTab, setActiveTab] = useState("menu");
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -57,32 +57,39 @@ const CafePage = () => {
   );
 
   let tabContent;
-  switch (activeTab) {
-    case "menu":
-      tabContent = (
-        <div>
-          <Menu/>
-        </div>
-      );
-      break;
-    case "tables":
-      tabContent = (
-        <div>
-          <Table />
-        </div>
-      );
-      break;
-    case "reviews":
-      tabContent = (
-        <div>
-          <Comments comments={comments} />
-        </div>
-      );
-      break;
-    default:
-      tabContent = null;
-  }
-  
+  useEffect(() => {
+    if (kind === "comment") {
+      setActiveTab("reviews");
+      console.log("reviews");
+    }
+  }, [kind]);
+
+    switch (activeTab) {
+      case "menu":
+        tabContent = (
+          <div>
+            <Menu/>
+          </div>
+        );
+        break;
+      case "tables":
+        tabContent = (
+          <div>
+            <Table />
+          </div>
+        );
+        break;
+      case "reviews":
+        tabContent = (
+          <div>
+            <Comments comments={comments} />
+          </div>
+        );
+        break;
+      default:
+        tabContent = null;
+    }
+    
   const handleclick =()=> {
     window.history.back()
     }

@@ -13,6 +13,7 @@ import Login from "./pags/Login/Login";
 import Profile from "./pags/profile/profile";
 import CafePage from './pags/CafePage/CafePage';
 import Home from './pags/Home/Home';
+import MyMap from './pags/Map/Map';
 
 const App=() => {
   return (
@@ -22,7 +23,7 @@ const App=() => {
       <Routes>
         <Route path='/' exact Component={Login}/>
         <Route path='/signup' Component={SignUp} />
-        <Route path='/homepage' Component={Main}/>
+        <Route path='/home/*' Component={Home}/>
         <Route path='/verify/:email?/:kind?' Component={VerificationPage2} />
         <Route path='/passrecovery/:email?/:code?' Component={EditPass} />
         <Route path='/editEmail/:email?' Component={EditEmail}/>
@@ -31,6 +32,7 @@ const App=() => {
         <Route path='/HistoryOrder' Component={HistoryOrder}/>
         <Route path='/Profile' Component={Profile}/>
         <Route path='/cafepage/:key?' Component={CafePage}/>
+
       </Routes>
     </BrowserRouter>
     }

@@ -147,7 +147,7 @@ input[id="radio-3"]:checked ~ .glider {
 }
 .button-container {
   position: fixed;
-  bottom: 50px;
+  bottom: 80px;
   left: 20px;
   z-index: 10;
   border-radius: 50px;

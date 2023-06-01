@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./profile.css";
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
@@ -28,9 +29,8 @@ const Profile = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
-
+  const navigate = useNavigate();
   const amount = 500000;
-
   const [isEmailEditMode, setIsEmailEditMode] = useState(false);
   const [emailAddress, setEmailAddress] = useState("example@example.com");
   const [isPhoneEditMode, setIsPhoneEditMode] = useState(false);
@@ -78,7 +78,7 @@ const Profile = () => {
 
   const handleOrders = (event) => {
     event.preventDefault();
-    console.log("handleOrders");
+    navigate('/home/HistoryOrder ');
   };
   const handleFavoriteCafes = (event) => {
     event.preventDefault();
@@ -86,7 +86,11 @@ const Profile = () => {
   };
   const handleclick = () => {
     window.history.back()
-  }
+  };
+  const handleLogout=()=>{
+    navigate('/');
+
+  };
   return (
     <div className="main">
       <IoArrowBack style={{position:'fixed' , top:'3%' , left:'7%' , color:'#37251B'}} size={20} onClick={handleclick}/>
@@ -131,7 +135,7 @@ const Profile = () => {
                 color: "#37251B",
                 textAlign: "right",
                 right: 30,
-                top: "8%",
+                top: "12%",
               }}
             >
               ایمیل
@@ -161,7 +165,7 @@ const Profile = () => {
                 color: "#37251B",
                 textAlign: "right",
                 right: 30,
-                top: "20%",
+                top: "30%",
               }}
             >
               شماره تلفن
@@ -225,10 +229,10 @@ const Profile = () => {
             </div>
           </div>
         </div>
-        <button className="But">خروج از حساب</button>
+        
         <DisCountModal isOpen={isModalOpen} handleCloseModal={handleCloseModal} amount={amount} />
       </div>
-
+<button className="But" onClick={handleLogout}>خروج از حساب</button>
     </div>
   );
 };

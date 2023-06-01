@@ -8,7 +8,7 @@ const CafeObject = ({ id , image , name , location , score }) => {
 console.log("id"+id)
   
     return(
-        <Link to={`/cafepage/${id}`}>
+        <Link to={`/home/cafepage/${id}`}>
         <div style={{margin:'15px'}} >
             
             <div style={{width:'264px' , height:'230px' , backgroundColor:'white' , borderRadius:'10px', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)' }}>

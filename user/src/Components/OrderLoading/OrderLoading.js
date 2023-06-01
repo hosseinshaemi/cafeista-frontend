@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './OrderLoading.css' ; 
+// import './OrderLoading.css' ; 
 import OrderLoadingItem from "../../Components/OrderLoadingItem/OrderLoadingItem";
 
 const OrderLoading =({orderlist , setorderlist }) => {

@@ -96,7 +96,7 @@ const Login = () => {
                 marginTop: "60px",
               }}
             >
-              <Link to="/homepage">
+              <Link to="/home">
                 <button>ورود</button>
               </Link>
               <p

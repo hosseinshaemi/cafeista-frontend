@@ -1,0 +1,12 @@
+.leaflet-left {
+    display: flex;
+    left: 0;
+    align-items: flex-start;
+}
+.reset{
+    visibility: hidden;
+}
+.map{
+    width: 100vw;
+    height: 100vh;
+  }
