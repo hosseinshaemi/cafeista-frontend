@@ -14,8 +14,42 @@ const Home = () => {
   const toggleImage = () => {
     setIsOpen(!isOpen);
   };
-
-  const tableReservationRequests = ["(نفر 5)", "(نفر 2)", "(نفر 6)", "(نفر 4)", "(نفر 10)", "(نفر 2)"];
+  
+  const tableReservationRequests = [
+    {
+      name: "مهدی مختاری",
+      phoneNumber: "123456789",
+      date: "1402/04/02",
+      arrivalTime: "9",
+      departureTime:"11",
+      numberOFpoeple: 5,
+    },
+    {
+      name: "فاطمه رضایی",
+      phoneNumber: "987654321",
+      date: "1402/04/03",
+      arrivalTime: "10",
+      departureTime:"11",
+      numberOFpoeple: 2,
+    },
+    {
+      name:"مهسا بدیعی",
+      phoneNumber: "98255855321",
+      date: "1402/04/20",
+      arrivalTime: "10",
+      departureTime:"11",
+      numberOFpoeple: 6,
+    },
+    {
+      name:"زهرا عابدی",
+      phoneNumber: "98255855321",
+      date: "1402/04/20",
+      arrivalTime: "09",
+      departureTime:"11",
+      numberOFpoeple: 4,
+    },
+    
+  ];
   const ordersPendingConfirmation = ["( مهدی مختاری )", "( مهسا بدیعی )", "( زهرا عابدی )"];
   const ordersConfirmed = ["( پارسا محمدی )", "( فاطمه عباسی )", "( محمد نکویی )" ];
 

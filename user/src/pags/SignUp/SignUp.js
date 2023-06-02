@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./SignUp.css";
 import { Link, useNavigate } from "react-router-dom";
 import Inputs from "../../Components/Inputs/Inputs";
-import Button from "../../Components/Button/Button";
 import { CiPhone, CiUser } from "react-icons/ci";
 import { CiMail } from "react-icons/ci";
 import { CiLock, CiRead } from "react-icons/ci";

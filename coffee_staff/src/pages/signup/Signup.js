@@ -23,9 +23,8 @@ const Signup = () => {
     emailaddress: "",
     phonenumber: "",
   });
-
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
-
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -44,6 +43,9 @@ const Signup = () => {
     }); */
 
     navigate(`/verify/${inputs.emailaddress}/signup`);
+  };
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -96,15 +98,15 @@ const Signup = () => {
                 <CiMobile3 className="icon" />
               </div>
               <div className="input">
-                <Inputs
-                  type="password"
+              <Inputs
+                  type={showPassword ? 'text' : 'password'}
                   name="password"
                   value={inputs.password || ""}
                   onChange={handleChange}
                   placeholder="رمز عبور"
                 />
-                <CiLock className="icon" />
-                <CiRead className="ciread" />
+                <CiLock className="icon" />              
+                <CiRead className="ciread" onClick={togglePasswordVisibility}/>
               </div>
               <div>
                 <div

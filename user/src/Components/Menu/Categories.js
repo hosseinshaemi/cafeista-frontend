@@ -100,15 +100,13 @@ const Categories = () => {
       ],
     },
   ];
-
-  const [value, setValue] = useState(0);
-
+  const [value, setValue] = useState(0)
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   const activeCategory = data[value];
-
+  
   return (
     <ThemeProvider theme={theme}>
       <div>

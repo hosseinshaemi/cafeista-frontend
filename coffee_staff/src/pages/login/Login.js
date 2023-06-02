@@ -19,6 +19,7 @@ const Login = () => {
   });
 
   const [email, setemail] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const emailhandeler = (event) => {
@@ -39,7 +40,9 @@ const Login = () => {
     console.log("handleSubmit");
     navigate(`/verify/${email}/login`);
   };
-
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
   return (
     <div className="App" style={styles}>
       <div className="rectangle">
@@ -64,15 +67,17 @@ const Login = () => {
               </div>
 
               <div className="input">
-                <Inputs
-                  type="password"
+              <Inputs
+                  type={showPassword ? 'text' : 'password'}
                   name="password"
                   value={inputs.password || ""}
                   onChange={handleChange}
                   placeholder="رمز عبور"
                 />
-                <CiLock className="icon" />
-                <CiRead className="ciread" />
+                <CiLock className="icon" />              
+                <CiRead className="ciread" onClick={togglePasswordVisibility}/>
+
+               
               </div>
               <div>
                 <div className="Button" style={{ marginRight: "-30px" }}>

@@ -40,7 +40,7 @@ const Setting = () => {
       icon: SlLocationPin,
       label: "آدرس",
     },
-   
+
     {
       id: "standard-basic-5",
       variant: "standard",
@@ -149,10 +149,9 @@ const Setting = () => {
         overflow: "auto",
         display: "flex",
         justifyContent: "center",
-        
       }}
     >
-      <Wallet/>
+      <Wallet />
     </Box>
   );
   const deletAccountBody = (
@@ -173,7 +172,7 @@ const Setting = () => {
         justifyContent: "center",
       }}
     >
-      <DeletAccount/>
+      <DeletAccount />
     </Box>
   );
 
@@ -190,72 +189,71 @@ const Setting = () => {
           marginTop: "80px",
           backgroundColor: "rgb(240, 229, 212)",
           borderRadius: "20px",
-          
         }}
       >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            marginTop: "30px",
+          }}
+        >
           <div
             style={{
               display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              marginTop: "30px",
+              flexDirection: "row",
+              justifyContent: "flex-end",
+              alignItems: "flex-end",
+              position: "relative",
+              top: "1%",
+              right: "7%",
+            }}
+          >
+            <p
+              style={{
+                fontFamily: "IRANSansXBold",
+                fontSize: "30px",
+                marginRight: "30px",
+                marginBottom: "25px",
+                color: "#6D523E",
+              }}
+            >
+              کافه لوتوس
+            </p>
+            <label htmlFor="profile-image">
+              <img
+                src={profileImage}
+                alt="image"
+                style={{
+                  width: "120px",
+                  height: "120px",
+                  borderRadius: "320px",
+                  cursor: "pointer",
+                }}
+              />
+              <input
+                id="profile-image"
+                type="file"
+                accept="image/*"
+                style={{ display: "none" }}
+                onChange={handleProfileImageChange}
+              />
+            </label>
+          </div>
+        </div>
+        <div style={{ display: "flex", flexDirection: "row-reverse" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "right",
+              margin: "30px 230px",
             }}
           >
             <div
               style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "flex-end",
-                alignItems: "flex-end",
-                position: "relative",
-                top: "1%",
-                right: "7%",
-              }}
-            >
-              <p
-                style={{
-                  fontFamily: "IRANSansXBold",
-                  fontSize: "30px",
-                  marginRight: "30px",
-                  marginBottom: "25px",
-                  color: "#6D523E",
-                }}
-              >
-                کافه لوتوس
-              </p>
-              <label htmlFor="profile-image">
-                <img
-                  src={profileImage}
-                  alt="image"
-                  style={{
-                    width: "120px",
-                    height: "120px",
-                    borderRadius: "320px",
-                    cursor: "pointer",
-                  }}
-                />
-                <input
-                  id="profile-image"
-                  type="file"
-                  accept="image/*"
-                  style={{ display: "none" }}
-                  onChange={handleProfileImageChange}
-                />
-              </label>
-            </div>
-          </div>
-          <div style={{ display: "flex", flexDirection: "row-reverse"}}>
-          <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "right",
-            margin: "30px 230px",
-          }}
-          >
-            <div
-              style={{
-                marginRight:"-100px",
+                marginRight: "-100px",
                 width: "400px",
                 display: "flex",
                 flexDirection: "column",
@@ -277,7 +275,12 @@ const Setting = () => {
             }}
           >
             <Card
-              sx={{ maxWidth: 350, height: "50px" }}
+              sx={{
+                maxWidth: 350,
+                height: "50px",
+                backgroundColor: "rgb(240, 229, 212)",
+                border:"1px solid rgb(109, 82, 62)"
+              }}
               onClick={handleGalleryClick}
             >
               <CardActionArea>
@@ -287,7 +290,8 @@ const Setting = () => {
               </CardActionArea>
             </Card>
             <Card
-              sx={{ maxWidth: 350, height: "50px" }}
+              sx={{ maxWidth: 350, height: "50px",backgroundColor: "rgb(240, 229, 212)",
+              border:"1px solid rgb(109, 82, 62)" }}
               onClick={handleWalletClick}
             >
               <CardActionArea>
@@ -297,7 +301,8 @@ const Setting = () => {
               </CardActionArea>
             </Card>
             <Card
-              sx={{ maxWidth: 350, height: "50px" }}
+              sx={{ maxWidth: 350, height: "50px",backgroundColor: "rgb(240, 229, 212)",
+              border:"1px solid rgb(109, 82, 62)" }}
               onClick={handleDeletAccountClick}
             >
               <CardActionArea>

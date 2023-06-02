@@ -26,7 +26,7 @@ const Item = ({ info }) => {
     setDiscount(newDiscount);
   };
   const calculateDiscountedPrice = () => {
-    return itemPrice - (itemPrice * itemDiscount) / 100;
+    return price - (price * discount) / 100;
   };
   const hasDiscount = itemDiscount > 0;
   return (
@@ -61,7 +61,7 @@ const Item = ({ info }) => {
           <p style={{ left: "12.5%", marginTop: "-5px" }}>
             {hasDiscount ? (
               <span className="new-price">
-                <del style={{ fontSize: "12px", fontFamily:"IRANSansXLight" }}>{itemPrice}</del>{" "}
+                <del style={{ fontSize: "12px", fontFamily:"IRANSansXLight" }}>{price}</del>{" "}
                 <span style={{ color: "rgb(235, 150, 106)", fontSize: "16px",fontFamily:"IRANSansXLight" }}>
                   {calculateDiscountedPrice()}
                 </span>{" "}

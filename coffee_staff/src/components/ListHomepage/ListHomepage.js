@@ -1,25 +1,18 @@
-import React, { useState } from 'react';
-import Box from '@mui/material/Box';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import { FixedSizeList } from 'react-window';
-import TableRequestModal from '../TableRequestModal/TableRequestModal';
-import "./../../Fonts/iransansX family/IRANSansX-Bold.ttf";
-import "./../../Fonts/iransansX family/IRANSansX-Light.ttf";
-import './ListHomepage.css';
+import React, { useState } from "react";
+import Box from "@mui/material/Box";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import { FixedSizeList } from "react-window";
+import TableRequestModal from "../TableRequestModal/TableRequestModal";
+import Typography from "@mui/material/Typography";
+import "./ListHomepage.css";
 
 export default function ListHomepage({ items }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
-
-  const name = "مهدی مختاری";
-  const phoneNumber = "123456789";
-  const date = "1402/04/02";
-  const time = "09:00";
-  const numberOFpoeple = 5;
-
-  const handleOpenModal = (item) => {
+  const handleOpenModal = (index) => {
+    const item = items[index];
     setSelectedItem(item);
     setIsOpen(true);
   };
@@ -32,15 +25,40 @@ export default function ListHomepage({ items }) {
     const item = items[index];
 
     const handleClick = () => {
-      handleOpenModal(item);
+      handleOpenModal(index);
+    };
+
+    const handleOpenModal = (index) => {
+      const item = items[index];
+      setSelectedItem(item);
+      setIsOpen(true);
     };
 
     return (
       <ListItem style={style} key={index} component="div" disablePadding>
         <ListItemButton onClick={handleClick}>
           <ListItemText
-            style={{ textAlign: 'right', marginRight: '20px', fontFamily: "IRANSansXLight" }}
-            primary={`${item}  . ${index + 1}`}
+            style={{
+              textAlign: "right",
+              marginRight: "20px",
+              fontFamily: "IRANSansXLight",
+              direction: "rtl",
+            }}
+            primary={`${index + 1} . ${item.name} `}
+            secondary={
+              <Typography
+                variant="body2"
+                style={{
+                  textAlign: "right",
+                  fontSize: "10px",
+                  marginRight: "20px",
+                  fontFamily: "IRANSansXLight",
+                  color: "red",
+                }}
+              >
+                تعداد نفرات: {item.numberOFpoeple}
+              </Typography>
+            }
           />
         </ListItemButton>
       </ListItem>
@@ -48,9 +66,16 @@ export default function ListHomepage({ items }) {
   };
 
   return (
-    <Box sx={{ height: 500, maxWidth: 360, backgroundColor: '#F0E5D4', borderRadius: 2 }}>
+    <Box
+      sx={{
+        height: 500,
+        maxWidth: 360,
+        backgroundColor: "#F0E5D4",
+        borderRadius: 2,
+      }}
+    >
       <FixedSizeList
-        style={{ position: 'relative' }}
+        style={{ position: "relative" }}
         height={500}
         width={360}
         itemSize={50}
@@ -63,14 +88,7 @@ export default function ListHomepage({ items }) {
         isOpen={isOpen}
         handleCloseModal={handleCloseModal}
         selectedItem={selectedItem}
-        name={name}
-        phoneNumber={phoneNumber}
-        date={date}
-        time={time}
-        numberOFpoeple={numberOFpoeple}
       />
     </Box>
   );
 }
-
-

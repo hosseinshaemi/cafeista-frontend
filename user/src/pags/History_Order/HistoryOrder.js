@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import { IoArrowBack } from "react-icons/io5";
 import HistoryOrderCard from "../HistoryOrderCard/HistoryOrderCard";
 const HistoryOrder = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const handleOpenModal = () => setIsModalOpen(true);
-  const handleCloseModal = () => setIsModalOpen(false);
   const [HistoryOrderItems, setHistoryOrderItems] = useState([
     {
       id: 1,
@@ -96,7 +93,6 @@ const HistoryOrder = () => {
             fontSize: "15px",
             borderRadius: "7px",
           }}
-          onClick={handleOpenModal}
         >
           افزایش اعتبار
         </button >

@@ -2,22 +2,19 @@ import React, { useState } from "react";
 import "./ItemCard.css";
 
 const Item = ({ item }) => {
-  const { itemName, itemPrice, itemImage,itemDiscount } = item;
+  const { itemName, itemPrice, itemImage, itemDiscount } = item;
   const [clicked, setClicked] = useState(false);
-  // const [discount, setDiscount] = useState(10);
+
 
   const handleClick = () => {
     setClicked(!clicked);
   };
 
   const calculateDiscountedPrice = () => {
-    //return itemPrice - (itemPrice * discount) / 100;
     return itemPrice - (itemPrice * itemDiscount) / 100;
   };
 
-  // const hasDiscount = discount > 0;
   const hasDiscount = itemDiscount > 0;
-
   return (
     <div
       className={`item-card ${clicked ? "clicked" : ""}`}
@@ -33,22 +30,44 @@ const Item = ({ item }) => {
           }}
         >
           <p
-            style={{ right: "12.5%", marginBottom: "5px", marginTop: "6px" , fontFamily:"IRANSansXMedium"}}
+            style={{
+              right: "12.5%",
+              marginBottom: "5px",
+              marginTop: "6px",
+              fontFamily: "IRANSansXMedium",
+            }}
           >
             {itemName}
           </p>
           <p style={{ left: "12.5%", marginTop: "-5px" }}>
             {hasDiscount ? (
               <span className="new-price">
-                <del style={{ fontSize: "12px", fontFamily:"IRANSansXLight" }}>{itemPrice}</del>{" "}
-                <span style={{ color: "rgb(235, 150, 106)", fontSize: "16px",fontFamily:"IRANSansXLight" }}>
+                <del style={{ fontSize: "12px", fontFamily: "IRANSansXLight" }}>
+                  {itemPrice}
+                </del>{" "}
+                <span
+                  style={{
+                    color: "rgb(235, 150, 106)",
+                    fontSize: "16px",
+                    fontFamily: "IRANSansXLight",
+                  }}
+                >
                   {calculateDiscountedPrice()}
                 </span>{" "}
-                <span style={{ fontSize: "10px",fontFamily:"IRANSansXLight" }}>تومان</span>
+                <span
+                  style={{ fontSize: "10px", fontFamily: "IRANSansXLight" }}
+                >
+                  تومان
+                </span>
               </span>
             ) : (
               <>
-                {itemPrice} <span style={{ fontSize: "10px",fontFamily:"IRANSansXLight" }}>تومان</span>
+                {itemPrice}{" "}
+                <span
+                  style={{ fontSize: "10px", fontFamily: "IRANSansXLight" }}
+                >
+                  تومان
+                </span>
               </>
             )}
           </p>
