@@ -9,20 +9,48 @@ import Button from "@mui/material/Button";
 
 const Wallet = () => {
   const [open, setOpen] = useState(true);
-  const [value, setValue] = useState("female");
+  const [value, setValue] = useState("");
   const [isPaymentEnabled, setIsPaymentEnabled] = useState(false);
-  const [accountBalance, setAccountBalance]= useState(300000);
-  
-  const handleChange = (event) => {
+  const [isPaymentEnabled2, setIsPaymentEnabled2] = useState(false);
+  const [accountBalance, setAccountBalance] = useState(300000);
+  const [numberOFdays, setnumberOFdays] = useState(5);
 
-    const selectedPrice = event.target.value;
-    setValue(selectedPrice); 
+  const handleChange = (event) => {
+    const selectedPrice = parseInt(event.target.value);
+    setValue(selectedPrice.toString());
     const isPriceValid = selectedPrice <= accountBalance;
     setIsPaymentEnabled(isPriceValid);
+
+    const selectedPrice2 = parseInt(event.target.value);
+    setValue(selectedPrice2.toString());
+    const isPriceValid2 = selectedPrice2 >= accountBalance;
+    setIsPaymentEnabled2(isPriceValid2);
+
   };
-  
+
   const handleClick = () => {
+    const selectedPrice = parseInt(value);
+    const updatedBalance = accountBalance - selectedPrice;
+    setAccountBalance(updatedBalance);
     setOpen(!open);
+
+    if (value === "300000") {
+      setnumberOFdays(numberOFdays + 90);
+    } else if (value === "500000") {
+      setnumberOFdays(numberOFdays + 180);
+    } else if (value === "800000") {
+      setnumberOFdays(numberOFdays + 365);
+    }
+  };
+
+  const handleClickOnlinePayment = () => {
+    if (value === "300000") {
+      setnumberOFdays(numberOFdays + 90);
+    } else if (value === "500000") {
+      setnumberOFdays(numberOFdays + 180);
+    } else if (value === "800000") {
+      setnumberOFdays(numberOFdays + 365);
+    }
   };
 
   return (
@@ -54,7 +82,7 @@ const Wallet = () => {
           >
             تومان
           </p>
-          <p style={{ fontFamily: "IRANSansXLight" }}>13.000</p>
+          <p style={{ fontFamily: "IRANSansXLight" }}>{accountBalance}</p>
         </div>
         <div
           style={{
@@ -65,7 +93,7 @@ const Wallet = () => {
           }}
         >
           <p>روز از اشتراک شما باقی مانده</p>
-          <p style={{ marginLeft: "5px" }}>5</p>
+          <p style={{ marginLeft: "5px" }}>{numberOFdays}</p>
         </div>
         <hr
           style={{
@@ -171,12 +199,13 @@ const Wallet = () => {
             style={{
               width: "120px",
               borderRadius: "60px",
-              backgroundColor: isPaymentEnabled ? "#846046" : "#D3D3D3",
+              backgroundColor: isPaymentEnabled || isPaymentEnabled2 ? "#846046" : "#D3D3D3",
               fontFamily: "IRANSansXLight",
               fontSize: "12px",
             }}
             variant="contained"
-            disabled={!isPaymentEnabled} 
+            disabled={!isPaymentEnabled && !isPaymentEnabled2}
+            onClick={handleClickOnlinePayment} 
           >
             پرداخت آنلاین
           </Button>
@@ -191,6 +220,7 @@ const Wallet = () => {
             }}
             variant="outlined"
             disabled={!isPaymentEnabled}
+            onClick={handleClick} 
           >
             برداشت از حساب
           </Button>
@@ -201,5 +231,9 @@ const Wallet = () => {
 };
 
 export default Wallet;
+
+
+
+
 
 

@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import { IoArrowBack } from "react-icons/io5";
 import HistoryOrderCard from "../HistoryOrderCard/HistoryOrderCard";
+import CreditModal from "../../Components/CreditModL/CreditModL";
+
 const HistoryOrder = () => {
+  const [Credit, setCredit] = useState(200000);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
+
+
   const [HistoryOrderItems, setHistoryOrderItems] = useState([
     {
       id: 1,
@@ -84,7 +92,7 @@ const HistoryOrder = () => {
           >
             تومان
           </p>
-          <p style={{ fontSize: "15px" }}>200.000</p>
+          <p style={{ fontSize: "15px" }}>{Credit}</p>
         </div>
         <button
           style={{
@@ -123,6 +131,7 @@ const HistoryOrder = () => {
           </div>
         </div>
       </div>
+      <CreditModal isOpen={isModalOpen} handleCloseModal={handleCloseModal} setCredit={setCredit}/>
     </div>
   );
 };

@@ -11,11 +11,16 @@ import OrderLoading from "../../Components/OrderLoading/OrderLoading";
 import BasketItem from "./../../Components/BasketItem/BasketItem";
 
 const Basket = () => {
+  const [TotalOrderPrice, setTotalOrderPrice] = useState(130000);
+  const [Tax, setTax] = useState(11.700);
+  const [PayableAmount, setPayableAmount] = useState(142000);
+  const [TotalAmount, setTotalAmount] = useState(142000);
   const [isFabVisible, setIsFabVisible] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalpayOpen, setIsModalpayOpen] = useState(false);
   const [isFabVisiblepay, setIsFabVisiblepay] = useState(true);
   const [orderlist, setorderlist] = useState([]);
+  const [isContinueButtonDisabled, setIsContinueButtonDisabled] = useState(false);
   const [basketItems, setBasketItems] = useState([
     {
       id: 1,
@@ -84,6 +89,17 @@ const Basket = () => {
 
   const clearBasket = () => {
     setBasketItems([]);
+
+    const descriptionTextarea = document.querySelector(".basket-description textarea");
+    if (descriptionTextarea) {
+      descriptionTextarea.value = "";
+    }
+    const detailElements = document.querySelectorAll(".basket-detail .detailprice");
+    detailElements.forEach((element) => {
+      element.textContent = "";
+    });
+
+    setIsContinueButtonDisabled(true);
   };
 
   const handlemodalpay = () => {
@@ -146,7 +162,7 @@ const Basket = () => {
               }}
             >
               <p className="detailtitle">جمع سفارش</p>
-              <p className="detailprice">130.000<smap>تومان </smap></p>
+              <p className="detailprice">{TotalOrderPrice}<smap>تومان </smap></p>
             </div>
             <div
               style={{
@@ -156,7 +172,7 @@ const Basket = () => {
               }}
             >
               <p className="detailtitle">مالیات</p>
-              <p className="detailprice">11.700<smap>تومان </smap></p>
+              <p className="detailprice">{Tax}<smap>تومان </smap></p>
               
             </div>
             <div
@@ -170,7 +186,7 @@ const Basket = () => {
                 مبلغ قابل پرداخت
               </p>
               <p className="detailprice" style={{ color: "black" }}>
-                 141.700 <smap>تومان </smap>
+                 {PayableAmount} <smap>تومان </smap>
               </p>
              
             </div>
@@ -186,7 +202,7 @@ const Basket = () => {
                 جمع کل
               </p>
               <p className="detailprice" style={{ color: "black" }}>
-                141.700<smap>تومان </smap>
+                {TotalAmount}<smap>تومان </smap>
               </p>
 
             </div>
@@ -195,12 +211,13 @@ const Basket = () => {
               style={{
                 height: "56px",
                 width: "206px",
-                backgroundColor: "#846046",
+                backgroundColor:!isContinueButtonDisabled ? "#846046" : "#D3D3D3",
                 marginBottom:"80px",
                 padding: "0",
                 boxShadow:"0 0 1px 0 rgba(132, 96, 70, 0.25)0 6px 12px 0 rgba(132, 96, 70, 0.25)"
               }}
               onClick={handleModalpayOpen}
+              disabled={isContinueButtonDisabled}
             >
               ادامه
             </button>
