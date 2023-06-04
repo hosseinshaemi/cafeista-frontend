@@ -1,0 +1,214 @@
+@font-face {
+  font-family: "IRANSSansXLight";
+  src: url("../../Fonts/iransansX family/IRANSansX-Light.ttf")
+    format("truetype");
+  font-family: "IRANSansXBold";
+  src: url("../../Fonts/iransansX family/IRANSansX-Bold.ttf") format("truetype");
+  font-family: "IRANSansXMedium";
+  src: url("../../Fonts/iransansX family/IRANSansX-Medium.ttf")
+    format(truetype);
+}
+
+.item {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  width: 150px;
+  height: 220px;
+  border: 1px solid #846046;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px #ccc;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 15px 0px 5px;
+}
+
+.editbutton {
+  border: 1px solid #846046;
+  background-color: rgba(132, 96, 70, 0.5);
+  color: aliceblue;
+  position: relative;
+  bottom: 0;
+  width: 150px;
+  height: 39px;
+  border-radius: 10px;
+}
+.newitem {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 150px;
+  height: 220px;
+  border: 1px dotted #846046;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px #ccc;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 15px 0px 5px;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: block;
+  z-index: 1000;
+}
+
+.new-item {
+  margin: 10px 0;
+}
+
+
+.modal.active {
+  display: block;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modalform {
+  display: flex;
+  flex-direction: column;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 900;
+  display: none;
+}
+
+.backdrop.active {
+  display: block;
+}
+.Modal {
+  position: absolute;
+  direction: rtl;
+  top: 50%;
+  left: 50%;
+  height: 390px;
+  width: 400px;
+  display: block;
+  padding: 15px;
+  color: rgba(132, 96, 70, 0.9);
+  background-color: #fff;
+  border-radius: 16px;
+  transform: translate(-50%, -50%);
+  outline: transparent;
+  box-sizing: border-box;
+}
+.Overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* --- */
+.upload {
+  position: relative;
+  width: 150px;
+  height: 50px;
+  overflow: hidden;
+}
+.custom-button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #846046;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+}
+.custom-button:hover {
+  background-color: #5f3b3b;
+}
+.custom-button:active {
+  background-color: #3e2424;
+}
+.custom-button:focus {
+  outline: none;
+}
+#file-upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 100px;
+  opacity: 0;
+  cursor: pointer;
+}
+.profile{
+  justify-content: center;
+  margin-right: 12%;
+}
+.name{
+  font-family:'IRANSansXBold';
+  justify-content: end;
+  display: flex;
+  margin-top: 10px; 
+  margin-left: 120px; 
+  margin-right: 10px;   
+  color: #37251B;
+  font-size: 25px; 
+  
+}
+.EditiconsName{
+  color: #37251B;
+  font-size: 20px;
+}
+.Editicons{
+  margin-top: 42px;
+  margin-right:0px;
+  font-size: 28px; 
+}
+.in{
+  justify-content: center;
+  margin-top: 20px;
+  color: #37251B;
+} 
+
+.edit_info_input{
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.edit_info_input input{
+width: 100%;
+margin: 0px 10px;
+
+}
+
+.edit_info_input p{
+margin-bottom: 7px;
+}
+
+.edit_info_input .Editicons{
+  margin: 0;
+}
+
+#input-style :after{
+  border-bottom: 2px solid #3e2424;
+
+}

@@ -13,23 +13,20 @@
     .t1{
        
         font-family:'IRANSansXBold';
-        margin-top: 50px; 
-        margin-right: 10px;  
+        margin-top: 50px;  
         display: flex;
         justify-content: end;
         color: #37251B;
         font-size: 30px;
-        padding-right: 80px;
     }
     .t2{
         font-family: 'IRANSansXLight';
-        margin-top: -20px; 
-        margin-right: 10px;  
+        margin-top: -15px;
+        margin-right: 0; 
         display: flex;
         justify-content: end; 
         color: #AAAAAA;
         font-size: 12px;
-        padding-right: 80px;
     }
     
     .login-button{
@@ -38,12 +35,13 @@
     }
   
     .icon{
-      color: #37251B;
-      margin: -80px 60px 80px 310px;
+        color: #37251b;
+        margin: -80px 10px 60px 265px;
+        /* right: 25%; */
   
     }
     .input{
-      margin: 50px 0 50px 0 ;
+        margin: 0;
       
     }
     .ciread{
@@ -93,7 +91,6 @@
       
     .Account{
         font-family: 'IRANSansXLight';
-        /* position: absolute; */
         width: 299px;
         height: 21px;
         left: 60px;
@@ -108,15 +105,36 @@
         display: flex;
         justify-content: end;
     }
+    .ciread {
+        color: #37251b;
+        margin: -95px 0 0 0;
+      }
     .a{
         font-family: 'IRANSansXLight';
         color: rgb(0, 0, 0);
         text-decoration: none;
     }
+  .main{
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  padding: 90px 0 90px 0;
+  background-color: rgb(255, 255, 255);
+  }
+  .existaccount {
+    font-family: "IRANSansXLight";
+    color: #aaaaaa;
+    font-size: 14px;
+  }
+  .enter {
+    font-family: "IRANSansXLight";
+    color: #37251b;
+    font-size: 14px;
+    /* margin-right: 4px; */
   }
 
 
-
+  }
 
 
 

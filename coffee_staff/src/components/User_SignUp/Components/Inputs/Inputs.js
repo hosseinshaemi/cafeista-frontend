@@ -1,6 +1,5 @@
 import React from "react"
 import './Inputs.css'
-// import profile from './../../../Icons/profile4.png'
 import '../../../../Fonts/iransansX family/IRANSansX-Light.ttf'
 const Inputs = (props) => {
     return(

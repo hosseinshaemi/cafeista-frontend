@@ -1,0 +1,47 @@
+.counter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 0.7rem;
+  text-align: center;
+  width: 56px;
+  background-color: #EFE0C8;
+  border-radius: 15px;
+}
+
+.count-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 18px;
+  background-color: #EFE0C8;
+
+}
+
+.button-container {
+  display: flex;
+  gap: 1rem;
+
+}
+
+.increment-button,
+.decrement-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 0.6rem;
+  background-color: #846046;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+}
+
+/* .increment-button:hover,
+  .decrement-button:hover {
+    background-color: #846046;
+  } */

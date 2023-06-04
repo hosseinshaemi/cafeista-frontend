@@ -1,0 +1,171 @@
+.cafeheader {
+  width: 100vw;
+  height: 12.5vh;
+  top: 0;
+  position: sticky;
+  margin-top: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: initial;
+  background: rgba(0, 0, 0, 0.43);
+  align-content: center;
+}
+.cafename {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.cafescore {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.score {
+  width: 60px;
+  height: 30px;
+  background: #846046;
+  border-radius: 16px;
+  flex: none;
+  order: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #fff;
+}
+
+.witelayer {
+  border-radius: 30px 30px 0 0;
+  position: absolute;
+  margin-top: -25px;
+  width: 100vw;
+  height: 92vh;
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+  background-color: rgb(255, 255, 255);
+}
+
+/* --------------------------------- */
+
+:root {
+  --primary-color: #846046;
+  --secondary-color: #e6eef9;
+}
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Inter", sans-serif;
+}
+.tab-container {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.tabs {
+  display: flex;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 0 1px 0 rgba(132, 96, 70, 0.25),
+    0 6px 12px 0 rgba(132, 96, 70, 0.25);
+  padding: 0.75rem;
+  border-radius: 99px;
+}
+.tabs * {
+  z-index: 2;
+}
+input[type="radio"] {
+  display: none;
+}
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 200px;
+  font-size: 25px;
+  font-weight: 500;
+  border-radius: 99px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: color 0.15s ease-in;
+}
+input[type="radio"]:checked + label {
+  color: #ffffff;
+}
+
+input[id="radio-1"]:checked ~ .glider {
+  transform: translateX(0%);
+}
+input[id="radio-2"]:checked ~ .glider {
+  transform: translateX(-100%);
+}
+input[id="radio-3"]:checked ~ .glider {
+  transform: translateX(-200%);
+}
+.glider {
+  position: absolute;
+  display: flex;
+  height: 60px;
+  width: 200px;
+  background-color: #846046;
+  box-shadow: 0 0 1px 0 rgba(132, 96, 70, 0.25),
+    0 6px 12px 0 rgba(132, 96, 70, 0.25);
+  z-index: 1;
+  border-radius: 99px;
+  transition: 0.25s ease-out;
+}
+@media (max-width: 700px) {
+  .tabs {
+    transform: scale(0.6);
+  }
+}
+
+.tab-content {
+  position: relative;
+  padding-bottom: 50px;
+}
+.button-container {
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  z-index: 10;
+  border-radius: 50px;
+}
+.stickywite {
+  position: sticky;
+  height: 89vh;
+  top: 10vh;
+}
+.carousel-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  object-fit: cover;
+}
+
+.alice-carousel .alice-carousel__stage-item{
+  height: 400px;
+}

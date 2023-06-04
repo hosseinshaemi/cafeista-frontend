@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'IRANSansXMedium';
+    src: url('./../../Fonts/iransansX family/IRANSansX-Medium.ttf')format(truetype);
+}
+button{
+
+    font-family: 'IRANSansXMedium';
+    width: 303px;
+    height: 40px;
+    border-radius: 60px;
+    background-color: #846046;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    border: none;
+}

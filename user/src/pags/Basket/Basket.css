@@ -1,0 +1,114 @@
+@font-face {
+  font-family: "IRANSansXLight";
+  src: url("./../../Fonts/iransansX family/IRANSansX-Light.ttf")
+    format("truetype");
+  font-family: "IRANSansXBold";
+  src: url("./../../Fonts/iransansX family/IRANSansX-Bold.ttf")
+    format("truetype");
+}
+
+.header-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  background-color: #fff;
+  z-index: 100;
+}
+
+.header-text {
+  font-size: 20px;
+  font-family: "IRANSansXLight";
+  color: #37251b;
+}
+
+.basket-items {
+  margin-top: 25px;
+  width: 100vw;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.basket-description {
+  width: 80%;
+}
+.basket-description p {
+  font-family: "IRANSansXBold";
+  color: #37251b;
+  font-size: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.basket-description textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 2px solid rgba(55, 37, 27, 25%);
+  border-radius: 5px;
+  font-size: 1em;
+  line-height: 2em;
+  resize: vertical;
+  box-sizing: border-box;
+  direction: rtl;
+  font-family: "IRANSansXLight";
+  color: #37251b;
+}
+
+.basket-description textarea:focus {
+  border: 2px solid #37251b;
+  outline: none;
+  box-shadow: none;
+}
+
+.basket-detail {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+.basket-detail .detailtitle {
+  color: #aaaaaa;
+  font-family: "IRANSansXLight";
+  display: flex;
+}
+
+.basket-detail .detailprice {
+  font-family: "IRANSansXLight";
+  direction: rtl;
+  float: left;
+  display: flex;
+  color: #aaaaaa;
+}
+
+.basket-detail .detailtooman {
+  font-family: "IRANSansXLight";
+  display: flex;
+  color: #aaaaaa;
+}
+#closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.plusbutton {
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  z-index: 10;
+  border-radius: 50px;
+}
+.button-bottom {
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 10px 0;
+  z-index: 1;
+}

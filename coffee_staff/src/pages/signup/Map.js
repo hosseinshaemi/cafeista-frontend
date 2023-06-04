@@ -14,7 +14,6 @@ import { Map } from "react-leaflet";
 import { OpenStreetMapProvider, GeoSearchControl } from "leaflet-geosearch";
 import "../../components/Button/Button.css";
 import Button from "../../components/Button/Button";
-import marker from '../../logo.svg';
 import {FaMapMarkerAlt} from "react-icons/fa";
 const styles = {
   display: "flex",

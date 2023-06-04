@@ -43,44 +43,6 @@
     direction: rtl;
     border: 1px solid #c1c7d0;
     height: 25px;
-    /* position: absolute; */
-    /* margin: -35px 10px 0px 290px;
-    right: 20%;  */
-    /* margin-right: 32px; */
+    
   }
  }
-/* .Inputs {
-        
-        height: 25px;
-        width: 234px;
-        direction: rtl;
-        border: none;
-    }
-    .Inputs::placeholder{
-        right: 10px;
-    }
-    .Inputs:focus{
-        outline: none;
-    }
-
-    input:first-of-type{
-        top: 10%;
-    }
-    
-    .first_img{
-        border: 1px solid black;
-        
-    }
-
-    .first{
-        top: 25%;
-    }
-    /* .second{
-        top: 35%;
-    } */
-/* .third{
-        top: 45%;
-    }
-    .fourth{
-        top: 55%;
-    } */

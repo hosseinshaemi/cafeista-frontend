@@ -1,0 +1,40 @@
+.basket-item {
+    display: flex;
+    width: 80%;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.basket-item img {
+
+    width: 40px;
+    height: 40px;
+     border-radius: 40px;
+}
+
+
+.basket-item-title {
+    color: #37251B;
+    font-family: 'IRANSansXBold';
+}
+
+
+.basket-item-price{
+    color: #37251B;
+    font-family: 'IRANSansXLight';
+}
+
+.basket-item-tooman{
+    color: #787676;
+    font-family: 'IRANSansXLight';
+    
+}
+.basket-item-line{
+    width: 80vw;
+    border: 1px solid #C1C7D0;
+}
+
+
+  
+  

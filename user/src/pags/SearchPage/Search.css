@@ -1,0 +1,106 @@
+.search-container {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000;
+}
+
+.searchpage {
+  padding-left: 32px;
+  padding-right: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.searchinput {
+  border-radius: 20px;
+  border: none;
+  margin: 0;
+  width: calc(85vw - 100px);
+  padding: 0 10px;
+  height: 40px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: rgba(240, 229, 222, 0.93);
+  outline-color: #37251b;
+  direction: rtl;
+  color: #37251b;
+}
+
+.searchbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: fixed;
+  right: 40px;
+  z-index: 1000;
+}
+.icon-circle{
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background:rgba(240, 229, 222, 0.93);
+}
+/* -------- */
+.search-icon {
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.search-line {
+  width: 13px;
+  height: 2px;
+  background: #37251b;
+  display: inline-block;
+  transform: rotate(45deg);
+  position: absolute;
+  bottom: 12px;
+  right: 7px;
+  transition: all 0.3s ease-in 0s;
+}
+
+.active .search-line {
+  width: 30px;
+  left: 5px;
+  top: 20px;
+  transition: all 0.3s ease-out 0s;
+}
+
+.search-circle {
+  width: 15px;
+  height: 15px;
+  border: 2px solid #37251b;
+  display: inline-block;
+  position: absolute;
+  top: 7px;
+  left: 6px;
+  border-radius: 50%;
+  transition: top 0.3s ease-in 0s, left 0.3s ease-in 0s,
+    border-radius 0.3s ease-in 0s, border-width 0.3s ease-in 0s,
+    width 0.3s ease-in 0s, height 0.3s ease-in 0s,
+    background-color 0.1s ease-in 0s;
+  background-color: transparent;
+}
+
+.active .search-circle {
+  width: 0;
+  height: 0;
+  border-width: 0;
+  top: 12px;
+  left: 12px;
+  transition: top 0.3s ease-in 0s, left 0.3s ease-in 0s,
+    border-radius 0s ease-in 0.3s, border-width 0.3s ease-in 0s,
+    width 0.3s ease-in 0s, height 0.3s ease-in 0s,
+    background-color 0s ease-in 0.3s;
+}
+
+.active .second-line {
+  transform: rotate(135deg);
+}
