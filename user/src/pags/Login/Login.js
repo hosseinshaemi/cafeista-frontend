@@ -1,5 +1,5 @@
 import "./Login.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Inputs from "../../Components/Inputs/Inputs";
 import { CiMail } from "react-icons/ci";
 import { CiLock } from "react-icons/ci";
@@ -10,19 +10,48 @@ import { useNavigate, Link } from "react-router-dom";
 
 const Login = () => {
   const [inputs, setInputs] = useState({
-    passsword: "",
-    emailaddress: "",
+    password: "",
+    email: "",
   });
   const [showPassword, setShowPassword] = useState(false);
   const [email, setemail] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const auth = localStorage.getItem('authorized');
+    if (auth === 'true') {
+      navigate('/home');
+      return;
+    }
+  }, []);
 
   const emailhandeler = (event) => {
     console.log("Email Handler Function");
     setemail(event.target.value);
     console.log("ok");
   };
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    console.log(inputs);
+    const result = await fetch('http://localhost:3000/api/user/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', },
+      credentials: 'include',
+      mode: 'cors',
+      body: JSON.stringify(inputs),
+    });
+    const response = await result.json();
 
+    /* if (!response.successfull) {
+      localStorage.setItem('authorized', false);
+      console.log(response);
+      alert('خطا');
+      return;
+    } */
+    
+    localStorage.setItem('authorized', true);
+    navigate(`/home`);
+  }
   const handleChange = (event) => {
     console.log("HandleChange Function");
     const name = event.target.name;
@@ -35,9 +64,11 @@ const Login = () => {
     console.log("handleSubmit");
     navigate(`/verify/${email}/login`);
   };
+
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
   return (
     <div
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
@@ -62,8 +93,8 @@ const Login = () => {
             />
             <Inputs
               type="email"
-              name="emailaddress"
-              value={inputs.emailaddress || ""}
+              name="email"
+              value={inputs.email || ""}
               onChange={(e) => {
                 handleChange(e);
                 emailhandeler(e);
@@ -96,9 +127,9 @@ const Login = () => {
                 marginTop: "60px",
               }}
             >
-              <Link to="/home">
-                <button>ورود</button>
-              </Link>
+
+                <button onClick={handleLogin}>ورود</button>
+
               <p
                 onClick={handleSubmit}
                 style={{

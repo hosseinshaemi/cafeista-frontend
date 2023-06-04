@@ -1,5 +1,4 @@
-import * as React from "react";
-import TablePagination from "@mui/material/TablePagination";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import Box from "@mui/material/Box";
 import Collapse from "@mui/material/Collapse";
@@ -14,9 +13,20 @@ import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import { createFilterOptions } from '@mui/material/Autocomplete';
-import Autocomplete from '@mui/material/Autocomplete';
 
+// function createData(OrderStatus, TrackingCode, OrderDate, OrderNumber,type,Number,Price,TotalPrice) {
+//   return {
+//     OrderStatus,
+//     TrackingCode,
+//     OrderDate,
+//     OrderNumber, 
+//     history: [
+//       {
+//         type,
+//         Number,
+//         Price,
+//         TotalPrice,
+//       },
 
 
 
@@ -44,14 +54,10 @@ function createData(OrderStatus, TrackingCode, OrderDate, OrderNumber,type,Numbe
 
 function Row(props) {
   const { row } = props;
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
-    
-         
-    <React.Fragment
-      sx={{ width: "70%", backgroundColor: "#FFF8F3", borderRadius: "10px"  }}
-    >
+    <React.Fragment>
       <TableRow sx={{ "& > *": { borderBottom: "unset" } }}>
         <TableCell>
           <IconButton
@@ -65,30 +71,24 @@ function Row(props) {
         <TableCell component="th" scope="row" style={{ textAlign: "center" }}>
           {row.OrderStatus}
         </TableCell>
-        <TableCell style={{ textAlign: "center" }}>
-          {row.TrackingCode}
-        </TableCell>
-        <TableCell style={{ textAlign: "center" }}>
-          {row.OrderDate}</TableCell>
-        <TableCell style={{ textAlign: "center" }}>
-          {row.OrderNumber}</TableCell>
+        <TableCell style={{ textAlign: "center" }}>{row.TrackingCode}</TableCell>
+        <TableCell style={{ textAlign: "center" }}>{row.OrderDate}</TableCell>
+        <TableCell style={{ textAlign: "center" }}>{row.OrderNumber}</TableCell>
       </TableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box sx={{ margin: 1 }}>
-              <Typography variant="h6" gutterBottom component="div" style={{fontFamily:"IRANSansXLight"}}>
+              <Typography variant="h6" gutterBottom component="div">
                 فاکتور
               </Typography>
               <Table size="small" aria-label="purchases">
                 <TableHead>
                   <TableRow>
-                    <TableCell style={{fontFamily:"IRANSansXLight"}}>نوع</TableCell>
-                    <TableCell style={{fontFamily:"IRANSansXLight"}}>تعداد</TableCell>
-                    <TableCell style={{ textAlign: "center" , fontFamily:"IRANSansXLight"}}>قیمت</TableCell>
-                    <TableCell style={{ textAlign: "center" , fontFamily:"IRANSansXLight"}}>
-                      قیمت کل
-                    </TableCell>
+                    <TableCell>نوع</TableCell>
+                    <TableCell>تعداد</TableCell>
+                    <TableCell style={{ textAlign: "center" }}>قیمت</TableCell>
+                    <TableCell style={{ textAlign: "center" }}>قیمت کل</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -113,7 +113,6 @@ function Row(props) {
         </TableCell>
       </TableRow>
     </React.Fragment>
-
   );
 }
 
@@ -126,7 +125,7 @@ Row.propTypes = {
       PropTypes.shape({
         type: PropTypes.string.isRequired,
         Number: PropTypes.number.isRequired,
-        Price : PropTypes.number.isRequired,
+        Price: PropTypes.number.isRequired,
         TotalPrice: PropTypes.number.isRequired,
       })
     ).isRequired,
@@ -134,55 +133,51 @@ Row.propTypes = {
   }).isRequired,
 };
 
-
-
-const rows = [
+const HistoryOrder = () => {
+  const rows = [
   createData("موفق/تحویل داده شده", 4532167584, "1401/08/02", 1 , 'لاته', 2 , 50000 , 100000 ),
   createData("موفق/تحویل داده شده", 4532167584, "1401/08/02", 2 ),
-  
 ];
-
-
-const HistoryOrder =()=>{
-    return (
-        <div  >
-          <div style={{flex:"1 1", position:"fixed", height:"97vh", left:"0px", right:"185px", marginTop:"80px"}}>
-
-          <div  >
+// const [rows, setRows] = useState([]);
+//   useEffect(() => {
+//     fetch("") 
+//       .then((response) => response.json())
+//       .then((data) => {
+//         setRows(data);
+//       })
+//       .catch((error) => {
+//         console.error("Error fetching orders:", error);
+//       });
+//   }, []);
+  return (
+    <div>
+      <div style={{ flex: "1 1", position: "fixed", height: "97vh", left: "0px", right: "185px", marginTop: "80px" }}>
+        <div>
           <Paper
             sx={{
-              position:"relative",
-              marginLeft:"100px",
-              top:"15%",
+              position: "relative",
+              marginLeft: "100px",
+              top: "15%",
               overflow: "hidden",
-              backgroundColor: "white" ,
+              backgroundColor: "white",
               borderRadius: "10px",
-              
             }}
           >
-            <TableContainer sx={{ maxHeight: 480, minHeight: 480 }}> 
+            <TableContainer sx={{ maxHeight: 480, minHeight: 480 }}>
               <Table aria-label="collapsible table" sx={{ borderRadius: "10px" }}>
                 <TableHead>
                   <TableRow>
                     <TableCell sx={{ backgroundColor: "#F0E5D4" }} />
-                    <TableCell
-                      style={{ textAlign: "center", backgroundColor: "#F0E5D4" , fontFamily:"IRANSansXBold" }}
-                    >
+                    <TableCell style={{ textAlign: "center", backgroundColor: "#F0E5D4", fontFamily: "IRANSansXBold" }}>
                       وضعیت سفارش
                     </TableCell>
-                    <TableCell
-                      style={{ textAlign: "center", backgroundColor: "#F0E5D4" , fontFamily:"IRANSansXBold"}}
-                    >
+                    <TableCell style={{ textAlign: "center", backgroundColor: "#F0E5D4", fontFamily: "IRANSansXBold" }}>
                       کدرهگیری
                     </TableCell>
-                    <TableCell
-                      style={{ textAlign: "center", backgroundColor: "#F0E5D4" , fontFamily:"IRANSansXBold"}}
-                    >
+                    <TableCell style={{ textAlign: "center", backgroundColor: "#F0E5D4", fontFamily: "IRANSansXBold" }}>
                       تاریخ سفارش
                     </TableCell>
-                    <TableCell
-                      style={{ textAlign: "center", backgroundColor: "#F0E5D4", fontFamily:'IRANSansXBold' }}
-                    >
+                    <TableCell style={{ textAlign: "center", backgroundColor: "#F0E5D4", fontFamily: "IRANSansXBold" }}>
                       شماره سفارش
                     </TableCell>
                   </TableRow>
@@ -194,13 +189,11 @@ const HistoryOrder =()=>{
                 </TableBody>
               </Table>
             </TableContainer>
-            
           </Paper>
-          </div>
-          </div>
-          
-         </div> 
-      );
+        </div>
+      </div>
+    </div>
+  );
+};
 
-}
 export default HistoryOrder;

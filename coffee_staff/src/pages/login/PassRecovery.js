@@ -12,6 +12,9 @@ const styles = {
 const PassRecovery = () => {
   const { email, code } = useParams();
   const [newemail, setNewemail] = useState(email);
+  const [inputs, setInputs] = useState({
+    password: "",
+  });
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
@@ -24,6 +27,12 @@ const PassRecovery = () => {
     console.log("HandleInput");
     setNewemail(event.target.value);
   };
+  const handleChange = (event) => {
+    console.log("HandleChange Function");
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs((values) => ({ ...values, [name]: value }));
+  };
 
   return (
     <div className="verify" style={styles}>
@@ -34,15 +43,15 @@ const PassRecovery = () => {
           <Inputs
             type="input"
             placeholder="رمز عبور جدید"
-            value={email}
-            onChange={handleInput}
+            value={inputs.password || ""}
+            onChange={handleChange}
           />
           <CiLock className="icon" />
           <Inputs
             type="input"
             placeholder=" تکرار رمز عبور جدید"
-            value={email}
-            onChange={handleInput}
+            value={inputs.password || ""}
+            onChange={handleChange}
           />
           <CiLock className="icon" />
         </div>

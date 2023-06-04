@@ -18,7 +18,7 @@ const theme = createTheme({
 });
 
 const Categories = () => {
-  const data = [
+  /* const data = [
     {
       categoryName: "نوشیدنی گرم",
       items: [
@@ -99,14 +99,21 @@ const Categories = () => {
         },
       ],
     },
-  ];
+  ]; */
+
+  const data = JSON.parse(localStorage.getItem('cafepageresponse')).message;
+
   const [value, setValue] = useState(0)
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   const activeCategory = data[value];
-  
+
+  const cpr = localStorage.getItem('cafepageresponse');
+  if (!cpr) return;
+  const menu = JSON.parse(cpr);
+
   return (
     <ThemeProvider theme={theme}>
       <div>
@@ -138,7 +145,7 @@ const Categories = () => {
               {data.map((category, index) => (
                 <Tab
                   key={index}
-                  label={category.categoryName}
+                  label={category.name}
                   disableRipple={true}
                   sx={{
                     fontFamily: "IRANSansXMedium",
@@ -156,7 +163,7 @@ const Categories = () => {
           </Box>
         </div>
         <div className="menu-container">
-          {activeCategory.items.map((item, index) => (
+          {activeCategory.goods.map((item, index) => (
             <Item key={index} item={item} />
           ))}
         </div>

@@ -14,7 +14,7 @@ const styles = {
 
 const Login = () => {
   const [inputs, setInputs] = useState({
-    passsword: "",
+    password: "",
     emailaddress: "",
   });
 
@@ -28,6 +28,16 @@ const Login = () => {
     console.log("ok");
   };
 
+  const handleLogin = async (event)=>{
+    /* const result = await fetch("http://localhost:3000/api/cafe/register", {
+     method: "POST",
+     credentials: "include",
+     headers: { "Content-Type": "application/json" },
+     body: JSON.stringify(inputs),
+   }); */
+   navigate(`/main`);
+
+ }
   const handleChange = (event) => {
     console.log("HandleChange Function");
     const name = event.target.name;
@@ -81,7 +91,7 @@ const Login = () => {
               </div>
               <div>
                 <div className="Button" style={{ marginRight: "-30px" }}>
-                  <Link to="/main"><button >ورود</button></Link>
+                 <button onClick={handleLogin}>ورود</button>
                   <p onClick={handleSubmit}
                     style={{
                       textAlign: "right",

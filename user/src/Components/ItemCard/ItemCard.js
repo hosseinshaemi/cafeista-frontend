@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./ItemCard.css";
 
 const Item = ({ item }) => {
-  const { itemName, itemPrice, itemImage, itemDiscount } = item;
+  const { name: itemName, price: itemPrice, picture: itemImage, discount: itemDiscount } = item;
   const [clicked, setClicked] = useState(false);
 
 
@@ -11,7 +11,7 @@ const Item = ({ item }) => {
   };
 
   const calculateDiscountedPrice = () => {
-    return itemPrice - (itemPrice * itemDiscount) / 100;
+    return (itemPrice - (itemPrice * itemDiscount) / 100).toFixed(2);
   };
 
   const hasDiscount = itemDiscount > 0;

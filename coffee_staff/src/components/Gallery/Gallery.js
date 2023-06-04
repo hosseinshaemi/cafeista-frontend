@@ -1,34 +1,7 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import { Box, ImageList, ImageListItem ,Button} from "@mui/material";
 import { MdOutlineDelete } from "react-icons/md";
 import "./Gallery.css";
-
-// const itemData = [
-//   {
-//     img: require("../img/1.jpg"),
-//     title: "1",
-//   },
-//   {
-//     img: require("../img/2.jpg"),
-//     title: "2",
-//   },
-//   {
-//     img: require("../img/3.jpg"),
-//     title: "3",
-//   },
-//   {
-//     img: require("../img/4.jpg"),
-//     title: "4",
-//   },
-//   {
-//     img: require("../img/5.jpg"),
-//     title: "5",
-//   },
-//   {
-//     img: require("../img/6.jpg"),
-//     title: "6",
-//   },
-// ];
 
 const Gallery = () => {
   const [hoveredImage, setHoveredImage] = useState(null);
@@ -46,8 +19,22 @@ const Gallery = () => {
     event.stopPropagation();
     const updatedImages = uploadedImages.filter((item) => item !== image);
     setUploadedImages(updatedImages);
-  };
+    
+    fetch(`URL back/${image.id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
 
+    })
+      .then((response) => {
+
+      })
+      .catch((error) => {
+
+      });
+  };
+  
   const handleImageUpload = (event) => {
     const files = event.target.files;
     const imageArray = [];
@@ -66,6 +53,19 @@ const Gallery = () => {
 
         if (i === files.length - 1) {
           setUploadedImages((prevImages) => [...prevImages, ...imageArray]);
+          fetch("URL back", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newImage),
+          })
+            .then((response) => {
+
+            })
+            .catch((error) => {
+
+            });
         }
       };
 
@@ -73,7 +73,20 @@ const Gallery = () => {
     }
   };
 
-  // const allImages = [...itemData, ...uploadedImages];
+  useEffect(() => {
+
+    fetch("URL back")
+      .then((response) => response.json())
+      .then((data) => {
+
+        setUploadedImages(data);
+      })
+      .catch((error) => {
+
+      });
+  }, []);
+
+
   const allImages = [ ...uploadedImages];
 
   return (

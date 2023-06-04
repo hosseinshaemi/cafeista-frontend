@@ -8,14 +8,14 @@ import { CiMail } from "react-icons/ci";
 import { IoArrowBack } from "react-icons/io5";
 
 const EditEmail = () => {
-  const { email } = useParams();
+  const { email, kind } = useParams();
   const [newemail, setNewemail] = useState(email);
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(newemail);
-    navigate(`/verify/${newemail}`);
+    navigate(`/verify/${newemail}/${kind}`);
   };
 
   const handleInput = (event) => {

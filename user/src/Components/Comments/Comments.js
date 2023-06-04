@@ -52,7 +52,7 @@ const data =[
 const Comments = ({ comments }) => {
   return (
     <div className="comment-list">
-        {data.map(item => <CommentCard info={item}/>)}
+        {JSON.parse(localStorage.getItem('cafepageresponse')).comments.map(item => <CommentCard info={item}/>)}
        {comments && comments.length > 0 && (
         comments.map(item => <CommentCard info={item}/>)
       )}

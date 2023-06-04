@@ -45,6 +45,26 @@ function NewItem() {
 
     handleCloseModal();
   };
+  // const handleSaveItem = () => {
+  //   const formData = new FormData();
+  //   formData.append("itemImage", selectedFile);
+  //   formData.append("itemName", itemName);
+  //   formData.append("itemPrice", itemPrice);
+  //   formData.append("itemDiscount", itemDiscount);
+  //   fetch("   ", {
+  //     method: "POST",
+  //     body: formData,
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log("successfull");
+  //     })
+  //     .catch((error) => {
+
+  //       console.error(" upload  error ", error);
+  //     });
+  //   handleCloseModal();
+  // };
 
   return (
     <div className="newitem">

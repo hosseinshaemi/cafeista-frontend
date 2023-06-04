@@ -26,7 +26,7 @@ const App=() => {
         <Route path='/home/*' Component={Home}/>
         <Route path='/verify/:email?/:kind?' Component={VerificationPage2} />
         <Route path='/passrecovery/:email?/:code?' Component={EditPass} />
-        <Route path='/editEmail/:email?' Component={EditEmail}/>
+        <Route path='/editEmail/:email?/:kind?' Component={EditEmail}/>
         <Route path='/search' Component={Search}/>
         <Route path='/Basket' Component={Basket}/>
         <Route path='/HistoryOrder' Component={HistoryOrder}/>

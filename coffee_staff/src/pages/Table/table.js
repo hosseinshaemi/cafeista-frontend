@@ -32,6 +32,7 @@ const Table = () => {
   console.log(date);
   const toggleImage = () => {
     setIsOpenDay(!isOpenDay);
+    console.log(isOpenDay);
   };
 
   function IconWithCounter({ icon, index, handleIconClick }) {
@@ -147,7 +148,7 @@ const Table = () => {
           />
           <div style={{ direction: "rtl" }}>
             <DatePicker
-            value={date}
+              value={date}
               style={{
                 marginTop: "30px",
                 backgroundColor: "#F8F1E7",
@@ -157,7 +158,7 @@ const Table = () => {
               calendar={persian}
               locale={persian_fa}
               calendarPosition="bottom-right"
-              onChange={(e) => setDay(e.target.value)}
+              onChange={(e) => setDay(e.target?.value)}
             />
           </div>
           <div>

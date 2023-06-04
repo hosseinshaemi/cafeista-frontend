@@ -43,7 +43,7 @@ const Verification = ({ emailAddress }) => {
     const code = verificationCode.join('');
     console.log("handlebutton");
     if (kind == "signup") {
-      navigate(`/homepage`);
+      navigate(`/`);
     } else {
       navigate(`/passrecovery/${email}`);
     }
@@ -51,7 +51,7 @@ const Verification = ({ emailAddress }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("handleSubmit");
-    navigate(`/editEmail/${email}`);
+    navigate(`/editEmail/${email}/${kind}`);
   };
 
   const handleclick =() => {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Rating } from "@mui/material";
 
 const CommentCard = ({ info }) => {
-  const { name, rate, context } = info;
+  const { user, score: rate, text: context } = info;
 
   return (
     <div className="commment-card">
@@ -14,7 +14,7 @@ const CommentCard = ({ info }) => {
           alignItems: "baseline",
         }}
       >
-        <p style={{ fontSize: "24px", margin: "5px 0 -10px 0" , fontFamily:"IRANSansXMedium"}}> {name}</p>
+        <p style={{ fontSize: "24px", margin: "5px 0 -10px 0" , fontFamily:"IRANSansXMedium"}}> {user.firstname}</p>
         <Rating
           style={{
             direction: "ltr",
